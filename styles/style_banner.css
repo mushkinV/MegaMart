@@ -1,0 +1,66 @@
+/* Баннеры */
+.banners {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.banners .banner {
+    flex: 1;
+    background-color: #e0e0e0;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+/* Баннер‑слайдер */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.banner-slider img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+}
+
+.banner-slider .slide.active {
+    display: block;
+}
+
+/* Кнопки "влево" и "вправо" */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Можно добавить плавную смену картинок */
+.banner-slider img {
+    transition: opacity 0.5s ease;
+}

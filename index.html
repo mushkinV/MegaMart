@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>MegaMart</title>
-    <link rel="stylesheet" href="C:\Users\Кристина\Desktop\Web\MegaMart\styles\style.css">
-    
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style_banner.css">
+    <link rel="stylesheet" href="styles/style_product.css">
 </head>
 <body>
     <header class="header">
-        <div class="logo">MegaMart</div>
+  <div class="header-inner"> <!-- Новый главный контейнер -->
+    <div class="logo">MegaMart</div>
 
+
+    <div class="right-block"> <!-- Блок для иконок справа -->
         <div class="search">
             <input type="text" placeholder="Поиск товаров...">
         </div>
-
         <div class="user-links">
-            <a href="#">Войти</a>
-            <a href="#">Регистрация</a>
+            <a href="#" class="auth-btn">
+            <img src="images/ikona_SingUp.png" alt="Sing Up/Sing In" class="icon-user">
+            <span class="auth-text">Sing Up/Sing In</span>
+            </a>
         </div>
-
+        <div class="divider"></div>
         <div class="cart">
-            <a href="#">Корзина</a>
+            <a href="#" class="cart-btn">
+            <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
+            <span class="cart-text">Cart</span>
+            </a>
         </div>
-    </header>
+        </div>
+    </div>
+</header>
 
     <!-- 2. Баннеры / реклама товаров -->
     <section class="banner-slider">
