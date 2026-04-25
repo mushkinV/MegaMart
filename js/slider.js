@@ -1,30 +1,58 @@
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
+// Файл: js/slider.js
 
-function showSlide(index) {
-    for (let i = 0; i < totalSlides; i++) {
-        slides[i].classList.remove('active');
+// 1. Ждём, пока весь HTML загрузится
+document.addEventListener('DOMContentLoaded', function() {
+
+    // 2. Находим все нужные элементы
+    const slider = document.querySelector('.banner-slider');
+    
+    // Проверяем, что слайдер вообще есть на странице
+    if (!slider) return; 
+
+    const slides = slider.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // 3. Находим кнопки
+    const nextBtn = slider.querySelector('.next-btn');
+    const prevBtn = slider.querySelector('.prev-btn');
+
+    // --- Функции ---
+    function showSlide(index) {
+        // Убираем класс 'active' у всех слайдов
+        slides.forEach(slide => slide.classList.remove('active'));
+        // Добавляем класс 'active' только текущему
+        slides[index].classList.add('active');
     }
-    slides[index].classList.add('active');
-}
 
-function nextSlide() {
-    slideIndex = (slideIndex + 1) % totalSlides;
-    showSlide(slideIndex);
-}
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
 
-function prevSlide() {
-    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-    showSlide(slideIndex);
-}
+    function prevSlide() {
+        // Эта формула позволяет зациклить слайдер назад
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
 
-// Кнопки
-document.querySelector('.next-btn').addEventListener('click', nextSlide);
-document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+    // --- Логика ---
 
-// Автопрокрутка каждые 3 секунды
-setInterval(nextSlide, 3000);
+    // Если есть кнопки, вешаем на них обработчики клика
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
 
-// Показ первой картинки при загрузке
-showSlide(slideIndex);
+    // Если слайдов больше одного, запускаем автопрокрутку
+    if (totalSlides > 1) {
+        setInterval(nextSlide, 7000); // Меняем каждые 3 секунды
+    }
+
+    // Показываем первый слайд при загрузке страницы, если слайды есть
+    if (totalSlides > 0) {
+        showSlide(currentIndex);
+    }
+});
