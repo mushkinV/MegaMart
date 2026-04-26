@@ -2,131 +2,143 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>ФИНАЛЬНЫЙ ТЕСТ</title>
-    <!-- Весь CSS будет здесь -->
+    <title>MegaMart</title>
     <style>
-        /* --- CSS из style_banner.css (исправленный) --- */
-        /* Баннер‑слайдер */
-        .banner-slider {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
-            overflow: hidden;
+        /* --- Встроенный CSS (из style_product.css) --- */
+        .products-wrapper { padding: 40px 20px; background-color: #f9f9f9; }
+        .products-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .products-header h2 { font-size: 2rem; color: #333; }
+
+        /* --- Стили карусели --- */
+        .products-slider { position: relative; overflow: hidden; }
+        .products-slider__wrapper { display: flex; transition: transform 0.5s ease-in-out; }
+
+        .product-card {
+            flex: 0 0 18%;
+            background: #fff;
             border-radius: 10px;
-            background-color: #f0f8ff; /* Голубой фон, чтобы видеть границы */
-            min-height: 420px; /* Чтобы кнопки не вылезали */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            margin-right: 20px;
         }
+        .product-card:nth-child(5n) { margin-right: 0; }
 
-        /* 1. Скрываем все слайды по умолчанию */
-        .banner-slider .slides .slide {
-            display: none;
-        }
-
-        /* 2. Показываем активный слайд */
-        .banner-slider .slides .slide.active {
-            display: block;
-        }
-
-        /* 3. Стили для изображений */
-        .banner-slider img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Кнопки */
-        .banner-slider .prev-btn,
-        .banner-slider .next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6); /* Чуть темнее */
-            color: white;
-            border: none;
-            padding: 12px 18px; /* Чуть больше */
-            font-size: 24px; /* Чуть крупнее */
-            cursor: pointer;
+        /* --- ИСПРАВЛЕННЫЕ Кнопки (ВИДИМЫЕ) --- */
+        .slider-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 40px; height: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
             border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
             z-index: 10;
-            transition: background 0.3s; /* Эффект при наведении */
+            display: flex; align-items: center; justify-content: center;
         }
+        .prev-btn { left: -40px; }
+        .next-btn { right: -40px; }
 
-        .banner-slider .prev-btn {
-            left: 20px;
-        }
-
-        .banner-slider .next-btn {
-            right: 20px;
-        }
-
-        .banner-slider .prev-btn:hover,
-        .banner-slider .next-btn:hover {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
+        .product-image { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+        .product-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #333; }
+        .product-price { font-size: 1.1rem; color: #e91e63; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <h1 style="text-align:center;">ФИНАЛЬНЫЙ ТЕСТ СЛАЙДЕРА</h1>
-
-    <section class="banner-slider">
-        <div class="slides">
-            <img src="https://via.placeholder.com/1200x400/FF6347/FFFFFF?text=Слайд+1" alt="Слайд 1" class="slide active">
-            <img src="https://via.placeholder.com/1200x400/4682B4/FFFFFF?text=Слайд+2" alt="Слайд 2" class="slide">
-            <img src="https://via.placeholder.com/1200x400/32CD32/FFFFFF?text=Слайд+3" alt="Слайд 3" class="slide">
+    <!-- Ваш хедер -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">MegaMart</div>
+        <div class="right-block">
+          <!-- ... ваш код иконок ... -->
         </div>
-        
-        <button class="prev-btn">❮</button>
-        <button class="next-btn">❯</button>
+      </div>
+    </header>
+
+    <!-- Баннер (вы сказали он работает) -->
+    <section class="banner-slider">
+      <!-- ... ваш код баннера ... -->
     </section>
 
-    <!-- Весь JS будет здесь -->
+    <!-- 3. Секция популярных товаров -->
+    <section class="products-wrapper">
+        <div class="products-header">
+            <h2>Популярные товары</h2>
+            <a href="#" class="view-all-btn">Смотреть все</a>
+        </div>
+
+        <!-- Карусель товаров -->
+        <div class="products-slider">
+            <button class="slider-btn prev-btn">❮</button>
+
+            <div class="products-slider__wrapper">
+                <!-- Дублируйте этот блок, чтобы было больше 5 карточек -->
+                <div class="product-card"><h3>Товар 1</h3></div>
+                <div class="product-card"><h3>Товар 2</h3></div>
+                <div class="product-card"><h3>Товар 3</h3></div>
+                <div class="product-card"><h3>Товар 4</h3></div>
+                <div class="product-card"><h3>Товар 5</h3></div>
+                <div class="product-card"><h3>Товар 6</h3></div>
+                <div class="product-card"><h3>Товар 7</h3></div>
+                <div class="product-card"><h3>Товар 8</h3></div>
+                <div class="product-card"><h3>Товар 9</h3></div>
+                <div class="product-card"><h3>Товар 10</h3></div>
+            </div>
+
+            <button class="slider-btn next-btn">❯</button>
+        </div>
+    </section>
+
     <script>
-        // --- JS из slider.js (исправленный) ---
+        // --- Встроенный JS (из Product_card.js) ---
         document.addEventListener('DOMContentLoaded', function() {
-          const sliderContainer = document.querySelector('.banner-slider');
+            const wrapper = document.querySelector('.products-slider__wrapper');
+            
+            // Если слайдера нет на странице (например, мало товаров), скрипт не запускается
+            if (!wrapper) return; 
 
-          if (sliderContainer) {
-              let slideIndex = 0;
-              const slides = sliderContainer.querySelectorAll('.slide');
-              const totalSlides = slides.length;
+            const cards = document.querySelectorAll('.product-card');
+            
+            // Проверяем, нужно ли вообще включать слайдер
+            if (cards.length <= 5) {
+                // Если товаров мало, просто скрываем кнопки
+                document.querySelector('.prev-btn')?.style?.setProperty('display', 'none');
+                document.querySelector('.next-btn')?.style?.setProperty('display', 'none');
+                return;
+            }
 
-              function showSlide(index) {
-                  slides.forEach(slide => slide.classList.remove('active'));
-                  slides[index].classList.add('active');
-              }
+            const btnPrev = document.querySelector('.prev-btn');
+            const btnNext = document.querySelector('.next-btn');
 
-              function nextSlide() {
-                  slideIndex = (slideIndex + 1) % totalSlides;
-                  showSlide(slideIndex);
-              }
+            let counter = 0;
+            
+            // Ширина одной карточки с учетом её правого отступа (margin-right)
+            const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
 
-              function prevSlide() {
-                  slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-                  showSlide(slideIndex);
-              }
+            btnNext.addEventListener('click', () => {
+                // Проверяем, можно ли сдвинуть еще на один шаг (на 5 карточек)
+                if ((counter + 1) * cardWidth * 5 <= cards.length * cardWidth) { 
+                    counter++;
+                    wrapper.style.transform = 'translateX(' + (-cardWidth * counter * 5) + 'px)';
+                    // Скрываем/показываем кнопки в зависимости от позиции
+                    btnPrev.style.display = counter > 0 ? 'flex' : 'none';
+                    console.log("Сдвинули на", counter);
+                }
+            });
 
-              const nextBtn = sliderContainer.querySelector('.next-btn');
-              const prevBtn = sliderContainer.querySelector('.prev-btn');
-
-              if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-              if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-              // Запускаем автопрокрутку, если слайдов больше одного
-              if (totalSlides > 1) {
-                  setInterval(nextSlide, 3000);
-              }
-
-              // Показать первый слайд при загрузке
-              if (totalSlides > 0) {
-                  showSlide(slideIndex);
-              }
-          }
-      });
+            btnPrev.addEventListener('click', () => {
+                if (counter > 0) {
+                    counter--;
+                    wrapper.style.transform = 'translateX(' + (-cardWidth * counter * 5) + 'px)';
+                    btnPrev.style.display = counter > 0 ? 'flex' : 'none';
+                    console.log("Сдвинули на", counter);
+                    
+                    // Всегда показываем кнопку "Далее", если мы сдвинулись назад
+                    btnNext.style.display = 'flex';
+                }
+            });
+        });
     </script>
-
 </body>
 </html>

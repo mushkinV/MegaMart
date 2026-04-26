@@ -44,15 +44,74 @@
         <!-- Кнопки остаются на своих местах -->
         <button class="prev-btn">❮</button>
         <button class="next-btn">❯</button>
+        <script src="js/slider.js"></script>
     </section>
 
     <!-- 3. Товары -->
-    <section class="products">
-        <div class="product-card">Товар 1</div>
-        <div class="product-card">Товар 2</div>
-        <div class="product-card">Товар 3</div>
-        <div class="product-card">Товар 4</div>
+    <!-- 3. Товары -->
+    <section class="products-wrapper">
+    <!-- Заголовок и кнопка "Смотреть все" -->
+    <div class="products-header">
+        <h2>Популярные товары</h2>
+        <a href="#" class="view-all-btn">Смотреть все</a>
+    </div>
+
+    <!-- Карусель товаров -->
+    <div class="products-slider">
+        <!-- Контейнер для карточек -->
+        <div class="products-slider__wrapper">
+            <!-- Карточка 1 -->
+            <div class="product-card">
+                <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
+                <h3 class="product-title">iPhone 15</h3>
+                <p class="product-characteristics">128 ГБ</p>
+                <p class="product-price">99 990 ₽</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+            <!-- Карточка 2 (Дублируй этот блок, меняя данные) -->
+            <div class="product-card">
+                <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
+                <h3 class="product-title">iPhone 15 Pro</h3>
+                <p class="product-characteristics">256 ГБ</p>
+                <p class="product-price">129 990 ₽</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+            <div class="product-card">
+                <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
+                <h3 class="product-title">iPhone 15 Pro</h3>
+                <p class="product-characteristics">256 ГБ</p>
+                <p class="product-price">129 990 ₽</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+            <div class="product-card">
+                <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
+                <h3 class="product-title">iPhone 15 Pro</h3>
+                <p class="product-characteristics">256 ГБ</p>
+                <p class="product-price">129 990 ₽</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+            <div class="product-card">
+                <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
+                <h3 class="product-title">iPhone 15 Pro</h3>
+                <p class="product-characteristics">256 ГБ</p>
+                <p class="product-price">129 990 ₽</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+            <div class="product-card">
+                <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
+                <h3 class="product-title">iPhone 15 Pro</h3>
+                <p class="product-characteristics">256 ГБ</p>
+                <p class="product-price">129 990 ₽</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+            <!-- Добавь ещё 3 карточки, чтобы всего было 5+ -->
+        </div>
+
+        <!-- Кнопки переключения -->
+        <button class="slider-btn product_clider_prev-btn">❮</button>
+        <button class="slider-btn product_clider_next-btn">❯</button>
+    </div>
     </section>
-     <script src="js/slider.js"></script>
+    <script src="js/Product_card.js"></script>
 </body>
 </html>

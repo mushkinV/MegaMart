@@ -1,15 +1,105 @@
-/* Товары */
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+/* --- Секция популярных товаров --- */
+.products-wrapper {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
 }
 
+/* Заголовок и кнопка */
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* --- Стили карусели --- */
+.products-slider {
+    position: relative;
+    overflow: hidden; /* Скрывает то, что выходит за границы */
+    height: 350px; /* Фиксированная высота для корректного позиционирования кнопок */
+    padding: 0 40px; /* Отступы по бокам, равные ширине кнопок, чтобы они не перекрывали карточки */
+}
+
+.products-slider__wrapper {
+    display: flex; /* Выстраиваем карточки в ряд */
+    transition: transform 0.5s ease-in-out; /* Плавный сдвиг */
+}
+
+/* --- Стили карточек (5 в ряд) --- */
 .product-card {
-    width: 200px;
-    padding: 15px;
-    background-color: #f5f5f5;
+    flex: 0 0 16%; /* Фиксированная ширина для 5 карточек */
+    background: #fff;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
     text-align: center;
+    margin-right: 20px; /* Отступ справа между карточками */
+}
+
+/* Убираем отступ у последней карточки в каждом блоке из 5 штук.
+Это нужно, чтобы слайдер сдвигался ровно на 5 карточек. */
+.product-card:nth-child(5n) {
+    margin-right: 0;
+}
+
+/* --- Кнопки переключения (ВИДИМЫЕ) --- */
+/* Усиление специфичности: указываем, что кнопки находятся внутри .products-slider */
+.products-slider .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px; 
+    height: 40px; 
+    
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    
+    z-index: 10; /* Кнопка поверх всего остального */
+    
+    display: flex; /* Для центрирования иконки */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Позиционирование кнопок внутри контейнера .products-slider с учетом отступов (padding) */
+.products-slider .product_clider_prev-btn { left: 20px; } /* Отступ от края с учетом padding родителя */
+.products-slider .product_clider_next-btn { right: 20px; }
+
+/* Стили для содержимого карточек (чтобы выглядело красиво) */
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.add-to-cart-btn:hover {
+    background-color: #f57c00;
 }
