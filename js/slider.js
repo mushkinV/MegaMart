@@ -1,27 +1,20 @@
-// Файл: js/slider.js
 
-// 1. Ждём, пока весь HTML загрузится
 document.addEventListener('DOMContentLoaded', function() {
-
-    // 2. Находим все нужные элементы
     const slider = document.querySelector('.banner-slider');
     
-    // Проверяем, что слайдер вообще есть на странице
+    //Проверка если слайдер в проекте
     if (!slider) return; 
 
     const slides = slider.querySelectorAll('.slide');
     const totalSlides = slides.length;
     let currentIndex = 0;
 
-    // 3. Находим кнопки
+    //Боковые кнопки
     const nextBtn = slider.querySelector('.next-btn');
     const prevBtn = slider.querySelector('.prev-btn');
 
-    // --- Функции ---
     function showSlide(index) {
-        // Убираем класс 'active' у всех слайдов
         slides.forEach(slide => slide.classList.remove('active'));
-        // Добавляем класс 'active' только текущему
         slides[index].classList.add('active');
     }
 
@@ -31,14 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function prevSlide() {
-        // Эта формула позволяет зациклить слайдер назад
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         showSlide(currentIndex);
     }
 
-    // --- Логика ---
-
-    // Если есть кнопки, вешаем на них обработчики клика
     if (nextBtn) {
         nextBtn.addEventListener('click', nextSlide);
     }
@@ -46,12 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         prevBtn.addEventListener('click', prevSlide);
     }
 
-    // Если слайдов больше одного, запускаем автопрокрутку
     if (totalSlides > 1) {
-        setInterval(nextSlide, 7000); // Меняем каждые 3 секунды
+        setInterval(nextSlide, 7000); 
     }
-
-    // Показываем первый слайд при загрузке страницы, если слайды есть
+    
     if (totalSlides > 0) {
         showSlide(currentIndex);
     }

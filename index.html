@@ -14,9 +14,9 @@
     <div class="logo">MegaMart</div>
 
 
-    <div class="right-block"> <!-- Блок для иконок справа -->
+    <div class="right-block"> 
         <div class="search">
-            <input type="text" placeholder="Поиск товаров...">
+            <input type="text" placeholder="Search essentials, groceries and more...">
         </div>
         <div class="user-links">
             <a href="#" class="auth-btn">
@@ -37,31 +37,28 @@
 
     <!-- 2. Баннеры / реклама товаров -->
    <section class="banner-slider">
-        <!-- Блок <div class="slides"> удалён -->
+    <!-- подключение стилей-->
+        <img src="images/banner_3.png" alt="Баннер 1" class="slide active">
+        <img src="images/banner_2.png" alt="Баннер 2" class="slide">
+        <img src="images/banner_1.png" alt="Баннер 3" class="slide">
+        <img src="images/banner_4.png" alt="Баннер 4" class="slide">
+        <img src="images/banner_5.png" alt="Баннер 5" class="slide">
 
-        <img src="images/banner_1.jpg" alt="Баннер 1" class="slide active">
-        <img src="images/banner_2.jpg" alt="Баннер 2" class="slide">
-
-        <!-- Кнопки остаются на своих местах -->
         <button class="prev-btn">❮</button>
         <button class="next-btn">❯</button>
         <script src="js/slider.js"></script>
     </section>
 
     <!-- 3. Товары -->
-    <!-- 3. Товары -->
     <section class="products-wrapper">
-    <!-- Заголовок и кнопка "Смотреть все" -->
     <div class="products-header">
-        <h2>Популярные товары</h2>
-        <a href="#" class="view-all-btn">Смотреть все</a>
+        <h2>Grab the best deal on Smartphones</h2>
+        <a href="#" class="view-all-btn">View All</a>
     </div>
 
     <!-- Карусель товаров -->
     <div class="products-slider">
-        <!-- Контейнер для карточек -->
         <div class="products-slider__wrapper">
-            <!-- Карточка 1 -->
             <div class="product-card">
                 <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
                 <h3 class="product-title">iPhone 15</h3>
@@ -69,7 +66,6 @@
                 <p class="product-price">49 990 ₽</p>
                 <button class="add-to-cart-btn">Добавить в корзину</button>
             </div>
-            <!-- Карточка 2 (Дублируй этот блок, меняя данные) -->
             <div class="product-card">
                 <img src="images/iphone_15_pro.jpg" alt="iPhone 15 pro" class="product-image">
                 <h3 class="product-title">iPhone 15 Pro</h3>
@@ -126,21 +122,16 @@
                 <p class="product-price">229 990 ₽</p>
                 <button class="add-to-cart-btn">Добавить в корзину</button>
             </div>
-            <!-- Добавь ещё 3 карточки, чтобы всего было 5+ -->
         </div>
-
-        <!-- Кнопки переключения -->
         <button class="slider-btn product_clider_prev-btn">❮</button>
         <button class="slider-btn product_clider_next-btn">❯</button>
     </div>
     </section>
     <script src="js/Product_card.js"></script>
-    <!-- Дополнительные кнопки -->
-
 </body>
+<!--Подал-->
 <footer class="footer">
   <div class="footer-container">
-    <!-- Первый блок -->
     <div class="footer-column">
       <h3>MegaMart</h3>
       <p>Contact Us</p>
@@ -152,10 +143,8 @@
         <a href="#"><img src="images/ikona_GooglePlay.png" alt="Google Play"></a>
       </p>
     </div>
-
-    <!-- Второй блок -->
     <div class="footer-column">
-        <div class="title-wrapper"> <!-- ОТКРЫТИЕ ОБЁРТКИ -->
+        <div class="title-wrapper"> 
         <h3>Most Popular Categories</h3>
         <hr class="title-underline">
         </div> 
@@ -170,14 +159,11 @@
         <li>Dairy & Bakery</li>
       </ul>
     </div>
-
-    <!-- Третий блок -->
     <div class="footer-column">
         <div class="title-wrapper">
         <h3>Customer Services</h3>
         <hr class="title-underline">
-        </div>
-        
+        </div>      
       <ul>
         <li>About Us</li>
         <li>Terms & Conditions</li>
@@ -193,8 +179,5 @@
     <hr>
     <p>(2022 All rights reserved. Reliance Retail Ltd.)</p>
   </div>
-  
-  
-  
 </footer>
 </html>

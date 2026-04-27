@@ -5,105 +5,91 @@
     padding: 15px 25px;
 }
 
-/* Главный контейнер внутри шапки */
+
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Блок с иконками и поиском справа */
 .right-block {
-    display: flex; /* Выстраиваем поиск и иконки в один ряд */
-    align-items: center; /* Центрируем по вертикали */
+    display: flex; 
+    align-items: center;
     gap: 15px;
-     /* Отступ между поиском, кнопкой входа и корзиной */
+     
 }
 
-/* Логотип */
 .header-inner .logo {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-/* Поиск (прямоугольный, непрозрачный) */
+
 .header-inner .search input {
     width: 250px;
     padding: 10px 15px;
     border-radius: 8px;
     
-    /* Цвета для видимости прямоугольника */
-    background-color: #F3F9FB; /* Фон поля */
-    border: 1px solid #F3F9FB; /* Рамка поля */
-    color: #333; /* Цвет текста внутри */
     
-    outline: none; /* Убираем рамку при клике */
-    transition: border-color 0.2s ease; /* Плавное изменение цвета рамки */
+    background-color: #F3F9FB; 
+    border: 1px solid #F3F9FB; 
+    color: #333; 
+    
+    outline: none; 
+    transition: border-color 0.2s ease; 
 }
 
-/* --- СТИЛИ ДЛЯ КНОПКИ РЕГИСТРАЦИИ И КОРЗИНЫ --- */
 
-/* Общий стиль для ссылок (убираем подчеркивание) */
 .header .user-links a,
 .header .cart a {
     text-decoration: none; 
-    display: flex; /* Важно для выравнивания иконки и текста */
+    display: flex; 
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
     border-radius: 6px;
-    
-    /* Цвета по умолчанию */
-    background-color: transparent; /* Прозрачный фон по умолчанию */
-    color: inherit; /* Наследуем цвет текста от родителя (в вашем случае #008ECC) */
-    
-    transition: all 0.2s ease-in-out; /* Плавный переход для всех изменений */
+    background-color: transparent; 
+    color: inherit; 
+    transition: all 0.2s ease-in-out; 
 }
 
-/* Стили для иконок внутри кнопок */
 .header .icon-user,
 .header .icon-cart {
     width: 16px;
     height: 16px;
 }
 
-/* --- ЭФФЕКТЫ ПРИ НАВЕДЕНИИ --- */
-
-/* Эффект при наведении на кнопку "Войти / Регистрация" */
 .header .user-links a:hover {
-    background-color: #e0f7ff; /* Светло-голубой фон */
-    color: #0288d1; /* Более насыщенный синий текст */
+    background-color: #e0f7ff; 
+    color: #0288d1; 
 }
 
-/* Эффект при наведении на корзину */
+
 .header .cart a:hover {
-    background-color: #e0f7ff; /* Светло-голубой фон, как у регистрации */
-    color: #0288d1; /* Синий цвет текста, как у регистрации */
+    background-color: #e0f7ff; 
+    color: #0288d1; 
 }
-/* --- ДОБАВЛЕНИЕ РАЗДЕЛИТЕЛЯ | МЕЖДУ ИКОНКАМИ --- */
 
-/* 1. Создаем пустой блок-разделитель перед элементом .cart */
 .header .user-links + .cart::before {
-    content: "\007C"; /* Код символа | (вертикальная черта) */
-    margin: 0 15px;   /* Отступы слева и справа от черты */
-    color: #999;      /* Цвет разделителя (серый) */
+    content: "\007C"; 
+    margin: 0 15px;   
+    color: #999;      
 }
-/* 1. Создаем контейнер для ссылок, чтобы разделить их */
+
 .header .user-links,
 .header .cart {
-    position: relative; /* Это нужно для позиционирования разделителя */
+    position: relative; 
 }
 
-/* 2. Добавляем сам разделитель */
+
 .header .cart::before {
     content: "";
-    position: absolute; /* Позиционируем относительно родителя (.cart) */
-    left: -15px; /* Сдвигаем влево на величину отступа */
-    top: 50%; /* По центру по вертикали */
-    transform: translateY(-50%); /* Точная центровка по высоте иконки */
-    
-    width: 1px; /* Ширина линии */
-    height: 24px; /* Высота линии (как высота иконки) */
-    background-color: #999; /* Цвет линии */
+    position: absolute;
+    left: -15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 1px;
+    height: 24px; 
+    background-color: #999; 
 }
 
