@@ -1,0 +1,79 @@
+.footer {
+  background-color: #008ECC; /* Светло-голубой фон */
+  color: white; /* Белые буквы */
+  padding: 30px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li::before {
+  content: "•"; /* Юникод для точки-маркера */
+  margin-right: 10px; /* Отступ между точкой и текстом */
+  color: white; /* Цвет точки (белый) */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom hr {
+  border: none;
+  height: 1px;
+  background-color: white;
+  margin: 20px auto;
+  width: 100%; 
+  max-width: 1000px;
+}
+
+.footer-bottom p {
+  margin: 10px 0;
+}
+.footer p img {
+  width: 20px; /* Размер иконки */
+  height: 20px;
+  margin-right: 10px; /* Отступ от текста */
+  vertical-align: middle; /* Выравнивание по центру */
+}
+.footer p a img {
+  width: 125px; /* Размер изображения */
+  height: auto; /* Сохранение пропорций */
+  margin: 0 10px 0 0; /* Отступ между изображениями */
+}
+.title-wrapper {
+  position: relative; /* Для позиционирования линии */
+  display: inline-block; /* Ограничивает ширину по содержимому */
+}
+.title-underline {
+  position: absolute;
+  left: 0; /* Начинается от левого края текста */
+  bottom: -2px; /* Немного ниже базовой линии текста */
+  height: 2px;
+  background-color: white;
+  width: 100%; /* Ширина на всю ширину заголовка */
+}   
