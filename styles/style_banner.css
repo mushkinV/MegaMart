@@ -14,54 +14,137 @@
 }
 
 .banner-slider {
-    position: relative; 
+    position: relative;
     width: 100%;
     max-width: 1200px;
     margin: 20px auto;
-    overflow: hidden; 
+    overflow: hidden;
     border-radius: 10px;
-    height: 250px
+    height: 316px;
 }
 
 .banner-slider .slide {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    opacity: 0; 
-    transition: opacity 0.8s ease-in-out; 
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .banner-slider .slide.active {
-    opacity: 1; 
-    z-index: 2; 
+    opacity: 1;
+    z-index: 2;
 }
+
+.banner-slider .slide .slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.banner-slider .slide .slide-text {
+    flex: 2;
+    color: white;
+    padding-right: 40px;
+    font-family: 'HK Grotesk', sans-serif;
+    
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: -45px; 
+}
+
+/* --- СТИЛИ ДЛЯ ТЕКСТА --- */
+
+/* Заголовок */
+.banner-slider .slide .slide-text h2 {
+    font-size: 30px;
+    font-weight: 500; 
+}
+
+/* Ключевая фраза (SMART WEARABLE.) */
+.banner-slider .slide .slide-text p:nth-child(2) {
+    font-size: 63px;
+    font-weight: 700; 
+    
+    margin-bottom: 0; 
+}
+
+/* Скидка (UP to 80% OFF) */
+.banner-slider .slide .slide-text p:nth-child(3) {
+    font-size: 30px;
+    font-weight: 500; 
+}
+
+/* --- МАНУАЛЬНЫЕ ИНТЕРВАЛЫ (главное изменение) --- */
+
+/* Интервал между заголовком и "SMART WEARABLE." */
+.banner-slider .slide .slide-text h2 + p {
+     margin-top: -15px; 
+}
+
+/* Интервал между "SMART WEARABLE." и "UP to 80% OFF" */
+.banner-slider .slide .slide-text p:nth-child(3) {
+     margin-top: 20px; 
+}
+
+/* --- СТИЛИ ДЛЯ КАРТИНКИ --- */
+
+.banner-slider .slide .slide-image {
+    flex: 1;
+    
+     justify-content: flex-end;
+     align-items: flex-end; 
+}
+
+.banner-slider .slide .slide-image img {
+     max-width: 100%;
+     max-height: 85%;
+     object-fit: contain;
+ }
+
+/* --- СТИЛИ ДЛЯ КНОПОК --- */
 
 .banner-slider .prev-btn,
 .banner-slider .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    font-size: 24px; 
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10; 
-}
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: rgba(255, 255, 255, 0.4);
+     color: white;
+     border: none;
+     padding: 12px 18px;
+     font-size: 24px;
+     cursor: pointer;
+     border-radius: 50%;
+     z-index: 10;
+ }
 
 .banner-slider .prev-btn {
-    left: 20px; 
-}
+     left: 25px;
+ }
 
 .banner-slider .next-btn {
-    right: 20px;
+     right: 25px;
+ }
+
+/* --- ФОНЫ ДЛЯ СЛАЙДОВ (добавлено по вашему запросу) --- */
+
+.slide-1 {
+    background-color: #800080; /* Фиолетовый для первого слайда */
 }
-.banner-slider img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    display: block; 
-}   
+
+.slide-2 {
+    /*background-image: url('images/your-background-image.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; */
+     background-color: #4265ee; /* Фиолетовый для первого слайда */
+}

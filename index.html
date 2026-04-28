@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>MegaMart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=HK+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style_banner.css">
     <link rel="stylesheet" href="styles/style_product.css">
@@ -10,44 +13,62 @@
 </head>
 <body>
     <header class="header">
-  <div class="header-inner">
-    <div class="logo">MegaMart</div>
-
-
-    <div class="right-block"> 
-        <div class="search">
-            <input type="text" placeholder="Search essentials, groceries and more...">
+        <div class="header-inner"></div>
+        <div class="header-inner">
+        <div class="logo">MegaMart</div>
+        <div class="right-block"> 
+            <div class="search">
+                <input type="text" placeholder="Search essentials, groceries and more...">
+            </div>
+            <div class="user-links">
+                <a href="#" class="auth-btn">
+                <img src="images/ikona_SingUp.png" alt="Sing Up/Sing In" class="icon-user">
+                <span class="auth-text">Sing Up/Sing In</span>
+                </a>
+            </div>
+            <div class="divider"></div>
+            <div class="cart">
+                <a href="#" class="cart-btn">
+                <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
+                <span class="cart-text">Cart</span>
+                </a>
+            </div>
+            </div>
         </div>
-        <div class="user-links">
-            <a href="#" class="auth-btn">
-            <img src="images/ikona_SingUp.png" alt="Sing Up/Sing In" class="icon-user">
-            <span class="auth-text">Sing Up/Sing In</span>
-            </a>
-        </div>
-        <div class="divider"></div>
-        <div class="cart">
-            <a href="#" class="cart-btn">
-            <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
-            <span class="cart-text">Cart</span>
-            </a>
-        </div>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!-- 2. Баннеры / реклама товаров -->
-   <section class="banner-slider">
-    <!-- подключение стилей-->
-        <img src="images/banner_3.png" alt="Баннер 1" class="slide active">
-        <img src="images/banner_2.png" alt="Баннер 2" class="slide">
-        <img src="images/banner_1.png" alt="Баннер 3" class="slide">
-        <img src="images/banner_4.png" alt="Баннер 4" class="slide">
-        <img src="images/banner_5.png" alt="Баннер 5" class="slide">
+<section class="banner-slider">
+    <div class="slide active slide-1">
+        <div class="slide-content">
+            <div class="slide-text">
+                <h2>Best Deal Online on smart watches</h2>
+                <p>SMART WEARABLE.</p>
+                <p>UP to 50% OFF</p>
+            </div>
+            <div class="slide-image">
+                <img src="images/banner_1.png" alt="Изображение часов">
+            </div>
+        </div>
+    </div>
 
-        <button class="prev-btn">❮</button>
-        <button class="next-btn">❯</button>
-        <script src="js/slider.js"></script>
-    </section>
+    <div class="slide slide-2">
+        <div class="slide-content">
+            <div class="slide-text">
+                <h2>New Collection of Headphones</h2>
+                <p>ULTRA CLEAR SOUND.</p>
+                <p>Buy 1 Get 1 Free</p>
+            </div>
+            <div class="slide-image">
+                <img src="images/banner_1.png" alt="Изображение наушников">
+            </div>
+        </div>
+    </div>
+
+    <button class="prev-btn">❮</button>
+    <button class="next-btn">❯</button>
+    <script src="js/slider.js"></script>
+</section>
 
     <!-- 3. Товары -->
     <section class="products-wrapper">
@@ -128,9 +149,7 @@
     </div>
     </section>
     <script src="js/Product_card.js"></script>
-</body>
-<!--Подал-->
-<footer class="footer">
+    <footer class="footer">
   <div class="footer-container">
     <div class="footer-column">
       <h3>MegaMart</h3>
@@ -180,4 +199,7 @@
     <p>(2022 All rights reserved. Reliance Retail Ltd.)</p>
   </div>
 </footer>
+</body>
+<!--Подал-->
+
 </html>
