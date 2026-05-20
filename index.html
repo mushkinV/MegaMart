@@ -13,32 +13,37 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-inner"></div>
-        <div class="header-inner">
-        <div class="logo">MegaMart</div>
+    <div class="header-inner"> <!-- ОСТАВЛЯЕМ ТОЛЬКО ЭТОТ БЛОК -->
+        <div class="header-left">
+            <button class="menu-btn">
+                <img src="images/Group.png" alt="Меню" class="icon-menu">
+            </button>
+            <div class="logo">MegaMart</div>
+        </div>
+    
         <div class="right-block"> 
             <div class="search">
                 <input type="text" placeholder="Search essentials, groceries and more...">
             </div>
             <div class="user-links">
                 <a href="#" class="auth-btn">
-                <img src="images/ikona_SingUp.png" alt="Sing Up/Sing In" class="icon-user">
-                <span class="auth-text">Sing Up/Sing In</span>
+                    <img src="images/ikona_SingUp.png" alt="Sing Up/Sing In" class="icon-user">
+                    <span class="auth-text">Sing Up/Sing In</span>
                 </a>
             </div>
             <div class="divider"></div>
             <div class="cart">
                 <a href="#" class="cart-btn">
-                <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
-                <span class="cart-text">Cart</span>
+                    <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
+                    <span class="cart-text">Cart</span>
                 </a>
             </div>
-            </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- 2. Баннеры / реклама товаров -->
-<section class="banner-slider">
+<section class="banner-slider has-header-offset">
     <div class="slide active slide-1">
         <div class="slide-content">
             <div class="slide-text">
