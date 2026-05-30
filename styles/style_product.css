@@ -3,107 +3,463 @@
     background-color: #f9f9f9;
 }
 
+/* ===== НОВЫЙ ДИЗАЙН ЗАГОЛОВКА ===== */
 .products-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    
-    
+    align-items: flex-end;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.header-title-wrapper {
+    position: relative;
+    flex: 1;
 }
 
 .products-header h2 {
-    color: #666; 
-    margin: 0; 
-    font-size: 2rem; 
+    margin: 0;
+    font-size: 2rem;
     font-weight: 500;
+    font-family: 'HK Grotesk', sans-serif;
+    color: #666;
+    line-height: 1.2;
+    display: inline-block;   /* важно: линия будет под текстом */
+    position: relative; 
+}
+/* Толстая цветная линия под текстом h2 */
+.products-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #008ECC;
+}
+
+.products-header h2 .highlight {
+    color: #008ECC;
+}
+
+/* Толстая линия (3px) строго под текстом заголовка */
+.title-underline {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;               /* высота 3 пикселя */
+    background-color: #008ECC; /* цвет #008ECC */
+    max-width: fit-content;  /* линия равна ширине текста h2 */
+}
+
+/* Тонкая серая линия на всю ширину */
+.full-width-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.view-all-btn {
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666; /* цвет как у основной части заголовка */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.view-all-btn .arrow {
+    color: #008ECC;
+    font-size: 1.2rem;
+    font-weight: normal;
+    transition: transform 0.2s;
+}
+
+.view-all-btn:hover {
+    color: #333;
+}
+
+.view-all-btn:hover .arrow {
+    transform: translateX(3px);
 }
 
 /* --- Стили карусели --- */
 .products-slider {
     position: relative;
-    overflow: hidden;
-    height: 350px; 
-    padding: 0 40px; 
+    overflow-x: auto;       /* Горизонтальная прокрутка при необходимости */
+    overflow-y: hidden;
+    min-height: 350px;
+    padding: 0 40px;
 }
 
 .products-slider__wrapper {
-    display: flex; 
-    transition: transform 0.5s ease-in-out; 
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 0;
 }
 
-
+/* ===== ДИЗАЙН КАРТОЧКИ (227x295) ===== */
 .product-card {
-    flex: 0 0 calc((100% / 5) - 20px); 
+    flex: 0 0 227px;      /* Фиксированная ширина - не растягивается! */
     background: #fff;
-    border-radius: 10px
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 15px;
-    text-align: center;
-    margin-right: 10px; 
+    padding: 0;
+    margin-right: 20px;
+    overflow: hidden;
+    height: 295px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'HK Grotesk', sans-serif;
 }
 
-.product-card:nth-child(5n) {
+.product-card:last-child {
     margin-right: 0;
 }
 
+/* Область с фото и бейджем скидки */
+.card-media {
+    position: relative;
+    background-color: #f5f5f5;
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+/* Бейдж скидки: цвет #008ECC, обычный шрифт */
+.discount-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 53px;
+    height: 51px;
+    background-color: #008ECC;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: normal;
+}
+
+.discount-badge .percent {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.discount-badge .off-text {
+    font-size: 9px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/* Нижняя информационная часть */
+.card-info {
+    padding: 10px 12px 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.current-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.old-price {
+    font-size: 13px;
+    font-weight: normal;
+    color: #999;
+    text-decoration: line-through;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+    max-width: 201px;
+    margin: 6px 0 6px 0;
+}
+
+/* Зелёная строка экономии */
+.savings {
+    font-size: 12px;
+    font-weight: normal;
+    color: #249B3E;
+    margin-bottom: 8px;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.savings .save-amount {
+    font-weight: 700; /* полужирная сумма */
+}
+
+/* Кнопка "Добавить в корзину" скрыта */
+.add-to-cart-btn {
+    display: none;
+}
+
+/* --- Кнопки навигации карусели --- */
 .products-slider .slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    
-    width: 40px; 
-    height: 40px; 
-    
+    width: 40px;
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.9);
     color: #333;
-    
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.5rem;
-    
-    z-index: 10; 
-    
-    display: flex; 
+    z-index: 10;
+    display: flex;
     align-items: center;
     justify-content: center;
-}
-
-
-.products-slider .product_clider_prev-btn { left: 20px; } 
-.products-slider .product_clider_next-btn { right: 20px; }
-
-.product-image {
-    max-width: 100%;          
-    height: 150px;            
-    object-fit: cover;       
-    border-radius: 8px;      
-    margin-bottom: 15px; 
-}
-
-.product-title {
-    margin: 0 0 10px 0;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.product-price {
-    font-size: 1.1rem;
-    color: #e91e63;
-    font-weight: bold;
-}
-
-.add-to-cart-btn {
-    background-color: #ff9800;
-    color: white; 
     border: none;
-    padding: 12px;
-    width: 100%; 
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    font-family: 'HK Grotesk', sans-serif;
 }
-.add-to-cart-btn:hover {
-    background-color: #de6f00;
+
+.products-slider .slider-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.products-slider .product_clider_prev-btn {
+    left: 20px;
+}
+
+.products-slider .product_clider_next-btn {
+    right: 20px;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1400px) {
+    .product-card {
+        flex: 0 0 227px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .products-slider {
+        padding: 0 30px;
+    }
+    .product-card {
+        flex: 0 0 227px;
+    }
+}
+
+@media (max-width: 992px) {
+    .products-header h2 {
+        font-size: 1.5rem;
+    }
+    .products-slider {
+        padding: 0 20px;
+    }
+    .product-card {
+        flex: 0 0 200px;
+        height: 270px;
+    }
+    .discount-badge {
+        width: 48px;
+        height: 46px;
+    }
+    .discount-badge .percent {
+        font-size: 12px;
+    }
+    .discount-badge .off-text {
+        font-size: 8px;
+    }
+    .product-title {
+        font-size: 12px;
+    }
+    .current-price {
+        font-size: 14px;
+    }
+    .old-price {
+        font-size: 11px;
+    }
+    .divider {
+        max-width: 160px;
+    }
+    .savings {
+        font-size: 10px;
+    }
+    .title-underline {
+        bottom: -5px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-wrapper {
+        padding: 30px 15px;
+    }
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .view-all-btn {
+        margin-left: 0;
+    }
+    .products-header h2 {
+        font-size: 1.3rem;
+    }
+    .products-slider {
+        padding: 0 15px;
+    }
+    .product-card {
+        flex: 0 0 180px;
+        height: 250px;
+        margin-right: 15px;
+    }
+    .card-info {
+        padding: 8px 10px 10px;
+    }
+    .discount-badge {
+        width: 42px;
+        height: 40px;
+    }
+    .discount-badge .percent {
+        font-size: 11px;
+    }
+    .discount-badge .off-text {
+        font-size: 7px;
+    }
+    .product-title {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+    .price-row {
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+    .current-price {
+        font-size: 12px;
+    }
+    .old-price {
+        font-size: 10px;
+    }
+    .divider {
+        max-width: 130px;
+        margin: 4px 0 4px 0;
+    }
+    .savings {
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+    .products-slider .slider-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    .products-slider .product_clider_prev-btn {
+        left: 5px;
+    }
+    .products-slider .product_clider_next-btn {
+        right: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-wrapper {
+        padding: 20px 10px;
+    }
+    .products-header h2 {
+        font-size: 1.1rem;
+    }
+    .view-all-btn {
+        font-size: 0.9rem;
+    }
+    .products-slider {
+        padding: 0 10px;
+    }
+    .product-card {
+        flex: 0 0 160px;
+        height: 230px;
+        margin-right: 12px;
+    }
+    .card-info {
+        padding: 6px 8px 8px;
+    }
+    .discount-badge {
+        width: 38px;
+        height: 36px;
+    }
+    .discount-badge .percent {
+        font-size: 10px;
+    }
+    .discount-badge .off-text {
+        font-size: 6px;
+    }
+    .product-title {
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+    .current-price {
+        font-size: 11px;
+    }
+    .old-price {
+        font-size: 9px;
+    }
+    .divider {
+        max-width: 110px;
+        margin: 3px 0 3px 0;
+    }
+    .savings {
+        font-size: 8px;
+        margin-bottom: 4px;
+    }
+    .products-slider .slider-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
 }
