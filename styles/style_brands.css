@@ -1,0 +1,277 @@
+
+.brands-wrapper {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin-bottom: 60px;
+}
+
+
+.brands-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.brands-header .header-title-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.brands-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'HK Grotesk', sans-serif;
+    color: #666;
+    line-height: 1.2;
+    display: inline-block;
+    position: relative;
+}
+
+.brands-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #008ECC;
+}
+
+.brands-header h2 .highlight {
+    color: #008ECC;
+}
+
+.brands-header .view-all-btn {
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.brands-header .view-all-btn .arrow {
+    color: #008ECC;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.brands-header .view-all-btn:hover {
+    color: #333;
+}
+
+.brands-header .view-all-btn:hover .arrow {
+    transform: translateX(3px);
+}
+
+
+.brands-wrapper .full-width-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 6px;
+    margin-bottom: 30px;
+}
+
+.brands-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.brand-card {
+    flex: 0 0 389px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.brand-card:hover {
+    transform: translateY(-4px);
+}
+
+.brand-card-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 24px;
+    height: 207px;
+    box-sizing: border-box;
+}
+
+.brand-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    height: 100%;
+}
+
+.brand-tag {
+    width: 99px;
+    height: 35px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+}
+
+.brand-logo {
+    max-width: 80px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.brand-offer {
+    margin-top: auto;
+    margin-bottom: 0;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.brand-product {
+    flex-shrink: 0;
+    width: 104px;
+    height: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-product-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.brand-card[data-brand="iphone"] {
+    background-color: #313131;
+}
+.brand-card[data-brand="iphone"] .brand-tag {
+    background-color: #494949;
+}
+.brand-card[data-brand="iphone"] .brand-offer {
+    color: white;
+}
+
+.brand-card[data-brand="realme"] {
+    background-color: #FFF3CC;
+}
+.brand-card[data-brand="realme"] .brand-tag {
+    background-color: #F6DE8D;
+}
+.brand-card[data-brand="realme"] .brand-offer {
+    color: #333;
+}
+
+.brand-card[data-brand="xiaomi"] {
+    background-color: #FFECDF;
+}
+.brand-card[data-brand="xiaomi"] .brand-tag {
+    background-color: #FFD1B0;
+}
+.brand-card[data-brand="xiaomi"] .brand-offer {
+    color: #333;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 992px) {
+    .brands-header h2 {
+        font-size: 1.5rem;
+    }
+    .brands-grid {
+        gap: 15px;
+    }
+    .brand-card {
+        flex: 0 0 350px;
+    }
+    .brand-card-inner {
+        height: 190px;
+        padding: 15px;
+    }
+    .brand-product-img {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .brands-wrapper {
+        padding: 30px 15px;
+    }
+    .brands-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .brands-header .view-all-btn {
+        margin-left: 0;
+    }
+    .brand-card {
+        flex: 0 0 300px;
+    }
+    .brand-card-inner {
+        height: 170px;
+    }
+    .brand-tag {
+        width: 85px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .brand-logo {
+        height: 32px;
+    }
+    .brand-offer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-card {
+        flex: 0 0 260px;
+    }
+    .brand-card-inner {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+    .brand-info {
+        align-items: center;
+    }
+    .brand-product {
+        width: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .brands-grid {
+        scrollbar-width: none;         
+        -ms-overflow-style: none;    
+    }
+    .brands-grid::-webkit-scrollbar {
+        display: none;                
+    }
+}

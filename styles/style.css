@@ -1,4 +1,13 @@
-/* 1. ОСНОВА ШАПКИ И ФИКСАЦИЯ */
+
+html {
+    font-size: 62.5%; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .header {
     background-color: #ffffff;
     color: #008ECC;
@@ -7,124 +16,329 @@
     top: 0;
     left: 0;
     z-index: 100;
-    height: 90px; /* Фиксированная высота */
-    padding: 0 20px; /* Отступы по бокам, чтобы не прилипало к краям */
-    box-sizing: border-box; /* Чтобы отступы не увеличивали высоту */
-}
-
-/* 2. КОНТЕЙНЕР ВНУТРИ ШАПКИ (выравнивание) */
-.header-inner {
-    display: flex;
-    justify-content: space-between; /* Слева и справа */
-    align-items: center; /* По вертикали по центру */
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%; /* Занимает всю высоту .header */
-}
-
-/* 3. БЛОК СЛЕВА (Меню и Логотип) */
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.header .icon-user,
-.header .icon-cart {  
-    width: 24px;
-    height: 24px;
-}
-
-/* 4. БЛОК СПРАВА (Поиск, Регистрация, Корзина) */
-.right-block {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: relative; /* Нужно для разделителя */
-}
-
-/* --- СТИЛИ ДЛЯ ПОИСКА --- */
-.header-inner .search {
-    width: 507px; 
-}
-.header-inner .search input {
-    width: 100%;
-    height: 48px; 
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: #F3F9FB; 
-    border: 1px solid #F3F9FB; 
-    color: #333; 
-    outline: none; 
+    height: 9rem;
+    padding: 0 2rem;
     box-sizing: border-box;
 }
 
-/* --- СТИЛИ ДЛЯ РЕГИСТРАЦИИ И КОРЗИНЫ (с вашими размерами) --- */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.icon-menu {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
+.header-inner .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.right-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.search {
+    position: relative;
+    width: 50.7rem;
+}
+.search-icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.8rem;
+    height: 1.8rem;
+    pointer-events: none;
+}
+.list-icon {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+}
+.search input {
+    width: 100%;
+    height: 4.8rem;
+    padding: 1rem 4rem;
+    border-radius: 0.8rem;
+    background-color: #F3F9FB;
+    border: 1px solid #F3F9FB;
+    color: #333;
+    outline: none;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.4rem;
+}
+
 .header .user-links a,
 .header .cart a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    
-    /* ВАЖНО! Задаем точные размеры */
-    width: 159px; /* Для регистрации */
-    height: 24px;
-    
-    padding: 0; /* Убираем стандартный паддинг ссылок */
-    
+    gap: 0.8rem;
     text-decoration: none;
-    border-radius: 6px;
+    color: #666666;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 525;
     background-color: transparent;
-    color: inherit;
-    font-size: 14px; /* Уменьшаем текст, чтобы влез в высоту */
+    border-radius: 0.6rem;
+    padding: 0;
+    width: auto;
+    height: auto;
 }
 
-.header .cart a {
-    width: 62px; /* Для корзины */
+.header .icon-user,
+.header .icon-cart {
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
-/* --- СТИЛИ ДЛЯ РАЗДЕЛИТЕЛЯ (вертикальная палка) --- */
-.header .user-links + .cart::before {
+.right-block .user-links {
+    position: relative;
+    padding-right: 1rem;
+}
+.right-block .user-links::after {
     content: "";
-    position: absolute; /* Позиционируем относительно .right-block */
-    
-    left: -15px; /* Сдвигаем влево, чтобы было видно */
-    
+    position: absolute;
+    right: -1rem;
     top: 50%;
-    transform: translateY(-50%); /* Центрируем по вертикали */
-    
-    width: 1px;
-    height: 24px; /* Высота палки = высоте элементов (24px) */
-    
-    background-color: #999; /* Цвет линии */
+    transform: translateY(-50%);
+    width: 0.1rem;
+    height: 2.4rem;
+    background-color: #999;
+}
+.right-block .cart {
+    padding-left: 1rem;
 }
 
-/* Ховер эффекты остаются как были */
 .header .user-links a:hover,
 .header .cart a:hover {
-    background-color: #e0f7ff; 
-    color: #0288d1; 
+    background-color: #e0f7ff;
+    color: #0288d1;
 }
 
-/* Кнопка меню и иконки остаются без изменений */
-.menu-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-.icon-menu {
-  width: 48px; 
-  height: 48px;
-}
-
-/* Логотип остается без изменений */
-.header-inner .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-/* ОТСТУП ДЛЯ КОНТЕНТА (чтобы не прятался за шапку) */
 .has-header-offset {
-   padding-top: calc(90px + 20px); /* Высота шапки + боковые отступы (из .header) */
+    padding-top: calc(9rem + 2rem);
+}
+
+.category-menu-wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    margin-top: 9rem;
+    width: 100%;
+}
+
+.category-menu-top-line {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #e8e8e8;
+    margin-bottom: 1.2rem;
+}
+
+.category-menu-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.category-menu-scroll::-webkit-scrollbar {
+    height: 0.4rem;
+    display: none;
+}
+.category-menu-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1rem;
+}
+.category-menu-scroll::-webkit-scrollbar-thumb {
+    background: #008ECC;
+    border-radius: 1rem;
+}
+
+.category-menu {
+    display: inline-flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-right: 0.5rem; 
+}
+
+.menu-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.8rem;
+    background-color: #F3F9FB;
+    border-radius: 3rem;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #222222;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.menu-item.active {
+    background-color: #008ECC;
+    color: white;
+}
+.menu-arrow {
+    font-size: 1rem;
+    color: #008ECC;
+    transition: transform 0.2s;
+}
+.menu-item.active .menu-arrow {
+    color: white;
+}
+.menu-item:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.05);
+}
+
+.category-menu-line {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #e8e8e8;
+    margin-top: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+    .search {
+        width: 35rem;
+    }
+    .header .user-links a,
+    .header .cart a {
+        font-size: 1.6rem;
+    }
+    .right-block {
+        gap: 1.5rem;
+    }
+    .category-menu-wrapper {
+        padding: 0 1.5rem;
+        margin-top: 9rem;
+    }
+    .menu-item {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 1.5rem;
+        height: 9rem;
+    }
+    .header-inner {
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+    .header-left {
+        flex-shrink: 0;
+    }
+    .right-block {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        gap: 1rem;
+        min-width: 0;
+    }
+    .search {
+        width: 28rem;
+        flex-shrink: 1;
+    }
+    .search input {
+        font-size: 1.2rem;
+        height: 4rem;
+    }
+    .header .user-links a,
+    .header .cart a {
+        font-size: 1.4rem;
+        gap: 0.5rem;
+    }
+    .icon-user, .icon-cart {
+        width: 2rem;
+        height: 2rem;
+    }
+    .user-links::after {
+        right: -0.8rem;
+    }
+    .category-menu-wrapper {
+        margin-top: 9rem;
+        padding: 0 1.5rem;
+    }
+    .menu-item {
+        padding: 0.6rem 1.4rem;
+        font-size: 1.3rem;
+    }
+    .menu-arrow {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .search {
+        width: 20rem;
+    }
+    .right-block {
+        gap: 0.5rem;
+    }
+    .header .user-links a span,
+    .header .cart a span {
+        display: none;
+    }
+    .user-links, .cart {
+        padding: 0;
+    }
+    .user-links::after {
+        right: -0.5rem;
+    }
+    .right-block .cart {
+        padding-left: 0.5rem;
+    }
+    .menu-item {
+        padding: 0.5rem 1.2rem;
+        font-size: 1.2rem;
+    }
+    .menu-arrow {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .category-menu-scroll {
+        scrollbar-width: none;          
+        -ms-overflow-style: none;       
+    }
+    .category-menu-scroll::-webkit-scrollbar {
+        display: none;                 
+    }
 }

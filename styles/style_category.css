@@ -1,0 +1,223 @@
+
+.categories-wrapper {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin-bottom: 60px;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.header-title-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.categories-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'HK Grotesk', sans-serif;
+    color: #666;
+    line-height: 1.2;
+    display: inline-block;   
+    position: relative;
+}
+
+.categories-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #008ECC;
+}
+
+.categories-header h2 .highlight {
+    color: #008ECC;
+}
+
+.categories-header .view-all-btn {
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.categories-header .view-all-btn .arrow {
+    color: #008ECC;
+    font-size: 1.2rem;
+    font-weight: normal;
+    transition: transform 0.2s;
+}
+
+.categories-header .view-all-btn:hover {
+    color: #333;
+}
+
+.categories-header .view-all-btn:hover .arrow {
+    transform: translateX(3px);
+}
+
+.categories-wrapper .full-width-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 6.5px;
+    margin-bottom: 30px;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    flex: 0 0 auto;
+    width: 132px;
+    text-align: center;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.category-circle {
+    width: 132px;
+    height: 132px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-image {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.category-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.category-card:hover .category-circle {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #e8e8e8;
+}
+
+.category-card:hover .category-name {
+    color: #008ECC;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1200px) {
+    .categories-grid {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .categories-header h2 {
+        font-size: 1.5rem;
+    }
+    .category-card {
+        width: 120px;
+    }
+    .category-circle {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-wrapper {
+        padding: 30px 15px;
+    }
+    .categories-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .categories-header .view-all-btn {
+        margin-left: 0;
+    }
+    .category-card {
+        width: 100px;
+    }
+    .category-circle {
+        width: 100px;
+        height: 100px;
+    }
+    .category-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .category-card {
+        width: 80px;
+    }
+    .category-circle {
+        width: 80px;
+        height: 80px;
+    }
+    .category-name {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .categories-wrapper {
+        padding: 2rem 1rem;
+        margin-bottom: 3rem;
+    }
+    .categories-header h2 {
+        font-size: 1.8rem;
+    }
+    .view-all-btn {
+        font-size: 1.2rem;
+    }
+   
+    .categories-grid {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .category-card {
+        width: 10rem;      
+        flex: 0 0 auto;
+    }
+    .category-circle {
+        width: 10rem;
+        height: 10rem;
+    }
+    .category-name {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+   
+    .category-card {
+        cursor: pointer;
+    }
+}

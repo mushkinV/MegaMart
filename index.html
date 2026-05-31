@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MegaMart</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,38 +11,81 @@
     <link rel="stylesheet" href="styles/style_banner.css">
     <link rel="stylesheet" href="styles/style_product.css">
     <link rel="stylesheet" href="styles/style_footer.css">
+    <link rel="stylesheet" href="styles/style_category.css">
+    <link rel="stylesheet" href="styles/style_brands.css">
+    <link rel="stylesheet" href="styles/style_essentials.css">
+    <link rel="stylesheet" href="styles/style_modal_window.css">
 </head>
 <body>
     <header class="header">
-    <div class="header-inner"> <!-- ОСТАВЛЯЕМ ТОЛЬКО ЭТОТ БЛОК -->
-        <div class="header-left">
-            <button class="menu-btn">
-                <img src="images/Group.png" alt="Меню" class="icon-menu">
-            </button>
-            <div class="logo">MegaMart</div>
+        <div class="header-inner">
+            <div class="header-left">
+                <button class="menu-btn">
+                    <img src="images/Group.png" alt="Меню" class="icon-menu">
+                </button>
+                <div class="logo">MegaMart</div>
+            </div>
+            <div class="right-block">
+                <div class="search">
+                    <img src="images/Search.png" alt="Поиск" class="search-icon">
+                    <input type="text" placeholder="Search essentials, groceries and more...">
+                    <img src="images/list.png" alt="Список" class="list-icon">
+                </div>
+                <div class="user-links">
+                    <a href="#" class="auth-btn">
+                        <img src="images/ikona_SingUp.png" alt="Sign Up/Sign In" class="icon-user">
+                        <span class="auth-text">Sign Up/Sign In</span>
+                    </a>
+                </div>
+                <div class="cart">
+                    <a href="#" class="cart-btn">
+                        <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
+                        <span class="cart-text">Cart</span>
+                    </a>
+                </div>
+            </div>
         </div>
-    
-        <div class="right-block"> 
-            <div class="search">
-                <input type="text" placeholder="Search essentials, groceries and more...">
+    </header>
+    <div class="category-menu-wrapper">
+        <div class="category-menu-top-line"></div>
+    <div class="category-menu-scroll">
+        <div class="category-menu">
+            <div class="menu-item active">
+                <span class="menu-text">Groceries</span>
+                <span class="menu-arrow">V</span>
             </div>
-            <div class="user-links">
-                <a href="#" class="auth-btn">
-                    <img src="images/ikona_SingUp.png" alt="Sing Up/Sing In" class="icon-user">
-                    <span class="auth-text">Sing Up/Sing In</span>
-                </a>
+            <div class="menu-item">
+                <span class="menu-text">Premium Fruits</span>
+                <span class="menu-arrow">V</span>          
             </div>
-            <div class="divider"></div>
-            <div class="cart">
-                <a href="#" class="cart-btn">
-                    <img src="images/ikona_Cart.png" alt="Корзина" class="icon-cart">
-                    <span class="cart-text">Cart</span>
-                </a>
+            <div class="menu-item">
+                <span class="menu-text">Home & Kitchen</span>
+                <span class="menu-arrow">V</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-text">Fashion</span>
+                <span class="menu-arrow">V</span>             
+            </div>
+            <div class="menu-item">
+                <span class="menu-text">Electronics</span>
+                <span class="menu-arrow">V</span>               
+            </div>
+            <div class="menu-item">
+                <span class="menu-text">Beauty</span>
+                <span class="menu-arrow">V</span>               
+            </div>
+            <div class="menu-item">
+                <span class="menu-text">Home Improvement</span>
+                <span class="menu-arrow">V</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-text">Sports, Toys & Luggage</span>
+                <span class="menu-arrow">V</span>
             </div>
         </div>
     </div>
-</header>
-
+    <div class="category-menu-line"></div>
+</div>
     <!-- 2. Баннеры / реклама товаров -->
 <section class="banner-slider has-header-offset">
     <div class="slide active slide-1">
@@ -91,10 +135,10 @@
 </div>
 <div class="full-width-line"></div>
 
-    <!-- Карусель товаров -->
+ 
     <div class="products-slider">
         <div class="products-slider__wrapper">
-            <!-- Карточка товара 1 -->
+       
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -114,7 +158,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 2 -->
+     
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -134,7 +178,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 3 -->
+         
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -154,7 +198,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 4 -->
+       
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -174,7 +218,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 5 -->
+       
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -194,7 +238,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 6 -->
+        
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -214,7 +258,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 7 -->
+           
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -234,7 +278,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 8 -->
+         
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -254,7 +298,7 @@
                 </div>
             </div>
 
-            <!-- Карточка товара 9 -->
+          
             <div class="product-card">
                 <div class="card-media">
                     <div class="discount-badge">
@@ -278,8 +322,202 @@
         <button class="slider-btn product_clider_next-btn">❯</button>
     </div>
 </section>
-    </section>
+    
     <script src="js/Product_card.js"></script>
+<!-- 4. Категории -->
+<section class="categories-wrapper">
+    <div class="categories-header">
+        <div class="header-title-wrapper">
+            <h2>
+                Shop From 
+                <span class="highlight">Top Categories</span>
+            </h2>
+            <div class="title-underline"></div>
+        </div>
+        <a href="#" class="view-all-btn">
+            View All <span class="arrow">></span>
+        </a>
+    </div>
+    <div class="full-width-line"></div>
+
+  
+    <div class="categories-grid">
+      
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/mobile.png" alt="Mobile" class="category-image">
+            </div>
+            <p class="category-name">Mobile</p>
+        </div>
+    
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/cosmetics.png" alt="Cosmetics" class="category-image">
+            </div>
+            <p class="category-name">Cosmetics</p>
+        </div>
+        
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/electronics.png" alt="Electronics" class="category-image">
+            </div>
+            <p class="category-name">Electronics</p>
+        </div>
+    
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/furniture.png" alt="Furniture" class="category-image">
+            </div>
+            <p class="category-name">Furniture</p>
+        </div>
+     
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/watches.png" alt="Watches" class="category-image">
+            </div>
+            <p class="category-name">Watches</p>
+        </div>
+      
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/decor.png" alt="Decor" class="category-image">
+            </div>
+            <p class="category-name">Decor</p>
+        </div>
+       
+        <div class="category-card">
+            <div class="category-circle">
+                <img src="images/accessories.png" alt="Accessories" class="category-image">
+            </div>
+            <p class="category-name">Accessories</p>
+        </div>
+    </div>
+    </section>    
+
+<section class="brands-wrapper">
+    <div class="brands-header">
+        <div class="header-title-wrapper">
+            <h2>
+                Top 
+                <span class="highlight">Electronics Brands</span>
+            </h2>
+        </div>
+        <a href="#" class="view-all-btn">
+            View All <span class="arrow">></span>
+        </a>
+    </div>
+    <div class="full-width-line"></div>
+
+        <div class="brands-grid">
+            <!-- Баннер 1: IPHONE -->
+            <div class="brand-card" data-brand="iphone">
+                <div class="brand-card-inner">
+                    <div class="brand-info">
+                        <div class="brand-tag">IPHONE</div>
+                        <img src="images/IPHONE_ICONA.png" alt="iPhone" class="brand-logo">
+                        <p class="brand-offer">UP to 80% OFF</p>
+                    </div>
+                    <div class="brand-product">
+                        <img src="images/IPHONE_BREND.png" alt="iPhone product" class="brand-product-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Баннер 2: REALME -->
+            <div class="brand-card" data-brand="realme">
+                <div class="brand-card-inner">
+                    <div class="brand-info">
+                        <div class="brand-tag">REALME</div>
+                        <img src="images/REALME_ICONA.png" alt="Realme" class="brand-logo">
+                        <p class="brand-offer">UP to 80% OFF</p>
+                    </div>
+                    <div class="brand-product">
+                        <img src="images/REALME_BREND.png" alt="Realme product" class="brand-product-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Баннер 3: XIAOMI -->
+            <div class="brand-card" data-brand="xiaomi">
+                <div class="brand-card-inner">
+                    <div class="brand-info">
+                        <div class="brand-tag">XIAOMI</div>
+                        <img src="images/XIAOMI_ICONA.png" alt="Xiaomi" class="brand-logo">
+                        <p class="brand-offer">UP to 80% OFF</p>
+                    </div>
+                    <div class="brand-product">
+                        <img src="images/XIAOMI_BREND.png" alt="Xiaomi product" class="brand-product-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- 6. Daily Essentials -->
+<section class="essentials-wrapper">
+    <div class="essentials-header">
+        <div class="header-title-wrapper">
+            <h2>
+                Daily 
+                <span class="highlight">Essentials</span>
+            </h2>
+        </div>
+        <a href="#" class="view-all-btn">
+            View All <span class="arrow">></span>
+        </a>
+    </div>
+    <div class="full-width-line"></div>
+
+    <div class="essentials-grid">
+        <!-- Карточка 1 -->
+        <div class="essentials-card">
+            <div class="essentials-square">
+                <img src="images/Daily_Essentials.png" alt="Daily Essentials" class="essentials-img">
+            </div>
+            <p class="essentials-title">Daily Essentials</p>
+            <p class="essentials-offer">UP to 50% OFF</p>
+        </div>
+        <!-- Карточка 2 -->
+        <div class="essentials-card">
+            <div class="essentials-square">
+                <img src="images/Vegitables.png" alt="Vegitables" class="essentials-img">
+            </div>
+            <p class="essentials-title">Vegitables</p>
+            <p class="essentials-offer">UP to 50% OFF</p>
+        </div>
+        <!-- Карточка 3 -->
+        <div class="essentials-card">
+            <div class="essentials-square">
+                <img src="images/Fruits.png" alt="Fruits" class="essentials-img">
+            </div>
+            <p class="essentials-title">Fruits</p>
+            <p class="essentials-offer">UP to 50% OFF</p>
+        </div>
+        <!-- Карточка 4 -->
+        <div class="essentials-card">
+            <div class="essentials-square">
+                <img src="images/Strowberry.png" alt="Strowberry" class="essentials-img">
+            </div>
+            <p class="essentials-title">Strowberry</p>
+            <p class="essentials-offer">UP to 50% OFF</p>
+        </div>
+        <!-- Карточка 5 -->
+        <div class="essentials-card">
+            <div class="essentials-square">
+                <img src="images/Mango.png" alt="Mango" class="essentials-img">
+            </div>
+            <p class="essentials-title">Mango</p>
+            <p class="essentials-offer">UP to 50% OFF</p>
+        </div>
+        <!-- Карточка 6 -->
+        <div class="essentials-card">
+            <div class="essentials-square">
+                <img src="images/Cherry.png" alt="Cherry" class="essentials-img">
+            </div>
+            <p class="essentials-title">Cherry</p>
+            <p class="essentials-offer">UP to 50% OFF</p>
+        </div>
+    </div>
+</section>
     <footer class="footer">
   <div class="footer-container">
     <div class="footer-column">
@@ -327,10 +565,37 @@
 
   <div class="footer-bottom">
     <hr>
-    <p>(2022 All rights reserved. Reliance Retail Ltd.)</p>
+    <p>@2022 All rights reserved. Reliance Retail Ltd.</p>
   </div>
 </footer>
+
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="form-container">
+           
+            <div id="loginForm" class="auth-form active">
+                <h3>Вход</h3>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button class="submit-btn">Войти</button>
+                <p>Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></p>
+            </div>
+            
+            <div id="registerForm" class="auth-form">
+                <h3>Регистрация</h3>
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <input type="password" id="confirm_password" placeholder="Повторите пароль" required>
+                <button class="submit-btn">Зарегистрироваться</button>
+                <p>Уже есть аккаунт? <a href="#" id="showLogin">Войти</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/modal.js"></script>
 </body>
-<!--Подал-->
+
 
 </html>
