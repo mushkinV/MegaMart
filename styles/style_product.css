@@ -4,7 +4,6 @@
     margin-bottom: 60px;
 }
 
-/* ===== НОВЫЙ ДИЗАЙН ЗАГОЛОВКА ===== */
 .products-header {
     display: flex;
     justify-content: space-between;
@@ -21,14 +20,14 @@
 .products-header h2 {
     margin: 0;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'HK Grotesk', sans-serif;
     color: #666;
     line-height: 1.2;
-    display: inline-block;   /* важно: линия будет под текстом */
+    display: inline-block;  
     position: relative; 
 }
-/* Толстая цветная линия под текстом h2 */
+
 .products-header h2::after {
     content: '';
     position: absolute;
@@ -43,23 +42,22 @@
     color: #008ECC;
 }
 
-/* Толстая линия (3px) строго под текстом заголовка */
 .title-underline {
     position: absolute;
     bottom: -8px;
     left: 0;
     width: 100%;
-    height: 3px;               /* высота 3 пикселя */
-    background-color: #008ECC; /* цвет #008ECC */
-    max-width: fit-content;  /* линия равна ширине текста h2 */
+    height: 3px;               
+    background-color: #008ECC; 
+    max-width: fit-content;  /
 }
 
-/* Тонкая серая линия на всю ширину */
+
 .full-width-line {
     width: 100%;
     height: 1px;
-    background-color: #ccc;
-    margin-top: 8px;
+    background-color: #EDEDED;
+    margin-top: 6px;
     margin-bottom: 30px;
 }
 
@@ -67,7 +65,7 @@
     font-family: 'HK Grotesk', sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #666; /* цвет как у основной части заголовка */
+    color: #666; 
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -92,13 +90,13 @@
     transform: translateX(3px);
 }
 
-/* --- Стили карусели --- */
+
 .products-slider {
     position: relative;
-    overflow-x: auto;       /* Горизонтальная прокрутка при необходимости */
+    overflow-x: auto;       
     overflow-y: hidden;
     min-height: 350px;
-    padding: 0 40px;
+    padding: 20px 40px;
 }
 
 .products-slider__wrapper {
@@ -107,9 +105,9 @@
     gap: 0;
 }
 
-/* ===== ДИЗАЙН КАРТОЧКИ (227x295) ===== */
+
 .product-card {
-    flex: 0 0 227px;      /* Фиксированная ширина - не растягивается! */
+    flex: 0 0 227px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -120,13 +118,20 @@
     display: flex;
     flex-direction: column;
     font-family: 'HK Grotesk', sans-serif;
+    border: 2px solid transparent;
+    
 }
+.product-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 16px #008ECC;
+    background-color: #e8e8e8;
+}
+
 
 .product-card:last-child {
     margin-right: 0;
 }
 
-/* Область с фото и бейджем скидки */
 .card-media {
     position: relative;
     background-color: #f5f5f5;
@@ -145,7 +150,6 @@
     margin-bottom: 0;
 }
 
-/* Бейдж скидки: цвет #008ECC, обычный шрифт */
 .discount-badge {
     position: absolute;
     top: 0;
@@ -280,187 +284,113 @@
     right: 20px;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 1400px) {
-    .product-card {
-        flex: 0 0 227px;
+@media (max-width: 1024px) {
+    .search {
+        width: 35rem;
     }
-}
-
-@media (max-width: 1200px) {
-    .products-slider {
-        padding: 0 30px;
+    .header .user-links a,
+    .header .cart a {
+        font-size: 1.6rem;
     }
-    .product-card {
-        flex: 0 0 227px;
+    .right-block {
+        gap: 1.5rem;
     }
-}
-
-@media (max-width: 992px) {
-    .products-header h2 {
-        font-size: 1.5rem;
+    .category-menu-wrapper {
+        padding: 0 1.5rem;
+        margin-top: 9rem;
     }
-    .products-slider {
-        padding: 0 20px;
-    }
-    .product-card {
-        flex: 0 0 200px;
-        height: 270px;
-    }
-    .discount-badge {
-        width: 48px;
-        height: 46px;
-    }
-    .discount-badge .percent {
-        font-size: 12px;
-    }
-    .discount-badge .off-text {
-        font-size: 8px;
-    }
-    .product-title {
-        font-size: 12px;
-    }
-    .current-price {
-        font-size: 14px;
-    }
-    .old-price {
-        font-size: 11px;
-    }
-    .divider {
-        max-width: 160px;
-    }
-    .savings {
-        font-size: 10px;
-    }
-    .title-underline {
-        bottom: -5px;
-        height: 2px;
+    .menu-item {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 768px) {
-    .products-wrapper {
-        padding: 30px 15px;
+    .header {
+        padding: 0 1.5rem;
+        height: 9rem;
     }
-    .products-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+    .header-inner {
+        flex-wrap: nowrap;
+        gap: 1rem;
     }
-    .view-all-btn {
-        margin-left: 0;
+    .header-left {
+        flex-shrink: 0;
     }
-    .products-header h2 {
+    .right-block {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        gap: 1rem;
+        min-width: 0;
+    }
+    .search {
+        width: 28rem;
+        flex-shrink: 1;
+    }
+    .search input {
+        font-size: 1.2rem;
+        height: 4rem;
+    }
+    .header .user-links a,
+    .header .cart a {
+        font-size: 1.4rem;
+        gap: 0.5rem;
+    }
+    .icon-user, .icon-cart {
+        width: 2rem;
+        height: 2rem;
+    }
+    .user-links::after {
+        right: -0.8rem;
+    }
+    .category-menu-wrapper {
+        margin-top: 9rem;
+        padding: 0 1.5rem;
+    }
+    .menu-item {
+        padding: 0.6rem 1.4rem;
         font-size: 1.3rem;
     }
-    .products-slider {
-        padding: 0 15px;
-    }
-    .product-card {
-        flex: 0 0 180px;
-        height: 250px;
-        margin-right: 15px;
-    }
-    .card-info {
-        padding: 8px 10px 10px;
-    }
-    .discount-badge {
-        width: 42px;
-        height: 40px;
-    }
-    .discount-badge .percent {
-        font-size: 11px;
-    }
-    .discount-badge .off-text {
-        font-size: 7px;
-    }
-    .product-title {
-        font-size: 11px;
-        margin-bottom: 4px;
-    }
-    .price-row {
-        gap: 5px;
-        margin-bottom: 5px;
-    }
-    .current-price {
-        font-size: 12px;
-    }
-    .old-price {
-        font-size: 10px;
-    }
-    .divider {
-        max-width: 130px;
-        margin: 4px 0 4px 0;
-    }
-    .savings {
-        font-size: 9px;
-        margin-bottom: 5px;
-    }
-    .products-slider .slider-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-    }
-    .products-slider .product_clider_prev-btn {
-        left: 5px;
-    }
-    .products-slider .product_clider_next-btn {
-        right: 5px;
+    .menu-arrow {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 576px) {
-    .products-wrapper {
-        padding: 20px 10px;
+    .search {
+        width: 20rem;
     }
-    .products-header h2 {
-        font-size: 1.1rem;
+    .right-block {
+        gap: 0.5rem;
     }
-    .view-all-btn {
-        font-size: 0.9rem;
+    .header .user-links a span,
+    .header .cart a span {
+        display: none;
     }
-    .products-slider {
-        padding: 0 10px;
+    .user-links, .cart {
+        padding: 0;
     }
-    .product-card {
-        flex: 0 0 160px;
-        height: 230px;
-        margin-right: 12px;
+    .user-links::after {
+        right: -0.5rem;
     }
-    .card-info {
-        padding: 6px 8px 8px;
+    .right-block .cart {
+        padding-left: 0.5rem;
     }
-    .discount-badge {
-        width: 38px;
-        height: 36px;
+    .menu-item {
+        padding: 0.5rem 1.2rem;
+        font-size: 1.2rem;
     }
-    .discount-badge .percent {
-        font-size: 10px;
-    }
-    .discount-badge .off-text {
-        font-size: 6px;
-    }
-    .product-title {
-        font-size: 10px;
-        margin-bottom: 3px;
-    }
-    .current-price {
-        font-size: 11px;
-    }
-    .old-price {
-        font-size: 9px;
-    }
-    .divider {
-        max-width: 110px;
-        margin: 3px 0 3px 0;
-    }
-    .savings {
-        font-size: 8px;
-        margin-bottom: 4px;
-    }
-    .products-slider .slider-btn {
-        width: 25px;
-        height: 25px;
+    .menu-arrow {
         font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .category-menu-scroll {
+        scrollbar-width: none;          
+        -ms-overflow-style: none;       
+    }
+    .category-menu-scroll::-webkit-scrollbar {
+        display: none;                 
     }
 }

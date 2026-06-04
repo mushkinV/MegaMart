@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MegaMart</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=HK+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+      
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/style_banner.css">
     <link rel="stylesheet" href="styles/style_product.css">
     <link rel="stylesheet" href="styles/style_footer.css">
@@ -16,21 +15,25 @@
     <link rel="stylesheet" href="styles/style_essentials.css">
     <link rel="stylesheet" href="styles/style_modal_window.css">
 </head>
-<body>
+<body id="top">
     <header class="header">
         <div class="header-inner">
             <div class="header-left">
                 <button class="menu-btn">
                     <img src="images/Group.png" alt="Меню" class="icon-menu">
                 </button>
-                <div class="logo">MegaMart</div>
+                <img src="images/MegaMart.png" alt="MegaMart" class="logo">
             </div>
             <div class="right-block">
-                <div class="search">
-                    <img src="images/Search.png" alt="Поиск" class="search-icon">
-                    <input type="text" placeholder="Search essentials, groceries and more...">
-                    <img src="images/list.png" alt="Список" class="list-icon">
-                </div>
+                <form class="search" action="/" method="get">
+                    <button type="submit" class="search-btn">
+                        <img src="images/Search.png" alt="Поиск" class="search-icon">
+                    </button>
+                    <input type="text" name="q" placeholder="Search essentials, groceries and more...">
+                    <button type="button" class="list-btn">
+                        <img src="images/list.png" alt="Список" class="list-icon">
+                    </button>
+                </form>
                 <div class="user-links">
                     <a href="#" class="auth-btn">
                         <img src="images/ikona_SingUp.png" alt="Sign Up/Sign In" class="icon-user">
@@ -46,555 +49,571 @@
             </div>
         </div>
     </header>
-    <div class="category-menu-wrapper">
+    <main>
+        <div class="category-menu-wrapper">
         <div class="category-menu-top-line"></div>
-    <div class="category-menu-scroll">
-        <div class="category-menu">
-            <div class="menu-item active">
-                <span class="menu-text">Groceries</span>
-                <span class="menu-arrow">V</span>
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Premium Fruits</span>
-                <span class="menu-arrow">V</span>          
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Home & Kitchen</span>
-                <span class="menu-arrow">V</span>
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Fashion</span>
-                <span class="menu-arrow">V</span>             
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Electronics</span>
-                <span class="menu-arrow">V</span>               
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Beauty</span>
-                <span class="menu-arrow">V</span>               
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Home Improvement</span>
-                <span class="menu-arrow">V</span>
-            </div>
-            <div class="menu-item">
-                <span class="menu-text">Sports, Toys & Luggage</span>
-                <span class="menu-arrow">V</span>
+        <div class="category-menu-scroll">
+            <div class="category-menu">
+                <div class="menu-item active">
+                    <span class="menu-text">Groceries</span>
+                    <span class="menu-arrow">V</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Premium Fruits</span>
+                    <span class="menu-arrow">V</span>          
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Home & Kitchen</span>
+                    <span class="menu-arrow">V</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Fashion</span>
+                    <span class="menu-arrow">V</span>             
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Electronics</span>
+                    <span class="menu-arrow">V</span>               
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Beauty</span>
+                    <span class="menu-arrow">V</span>               
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Home Improvement</span>
+                    <span class="menu-arrow">V</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-text">Sports, Toys & Luggage</span>
+                    <span class="menu-arrow">V</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="category-menu-line"></div>
-</div>
+        <div class="category-menu-line"></div>
+        
     <!-- 2. Баннеры / реклама товаров -->
-<section class="banner-slider has-header-offset">
-    <div class="slide active slide-1">
-        <div class="slide-content">
-            <div class="slide-text">
-                <h2>Best Deal Online on smart watches</h2>
-                <p>SMART WEARABLE.</p>
-                <p>UP to 50% OFF</p>
+        <section class="banner-slider has-header-offset">
+            <div class="slide active slide-1">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Best Deal Online on smart watches</h2>
+                        <p>SMART WEARABLE.</p>
+                        <p>UP to 50% OFF</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="images/1111.png" alt="Изображение часов">
+                    </div>
+                </div>
             </div>
-            <div class="slide-image">
-                <img src="images/banner_1.png" alt="Изображение часов">
+
+            <div class="slide slide-2">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>New Collection of Headphones</h2>
+                        <p>ULTRA CLEAR SOUND.</p>
+                        <p>Buy 1 Get 1 Free</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="images/banner_1.png" alt="Изображение наушников">
+                    </div>
+                </div>
             </div>
+
+            <button class="prev-btn">
+                <img src="images/Group 21.png" alt="Предыдущий слайд">
+            </button>
+            <button class="next-btn">
+                <img src="images/Group 22.png" alt="Следующий слайд">
+            </button>
+            <script src="js/slider.js"></script>
+        </section>
+
+            <!-- 3. Товары -->
+        <section class="products-wrapper">
+            <div class="products-header">
+            <div class="header-title-wrapper">
+                <h2>
+                    Grab the best deal on 
+                    <span class="highlight">Smartphones</span>
+                </h2>
+                <div class="title-underline"></div>
+            </div>
+            <a href="#" class="view-all-btn">
+                View All <span class="arrow">></span>
+            </a>
         </div>
-    </div>
-
-    <div class="slide slide-2">
-        <div class="slide-content">
-            <div class="slide-text">
-                <h2>New Collection of Headphones</h2>
-                <p>ULTRA CLEAR SOUND.</p>
-                <p>Buy 1 Get 1 Free</p>
-            </div>
-            <div class="slide-image">
-                <img src="images/banner_1.png" alt="Изображение наушников">
-            </div>
-        </div>
-    </div>
-
-    <button class="prev-btn">❮</button>
-    <button class="next-btn">❯</button>
-    <script src="js/slider.js"></script>
-</section>
-
-    <!-- 3. Товары -->
-<section class="products-wrapper">
-    <div class="products-header">
-    <div class="header-title-wrapper">
-        <h2>
-            Grab the best deal on 
-            <span class="highlight">Smartphones</span>
-        </h2>
-        <div class="title-underline"></div>
-    </div>
-    <a href="#" class="view-all-btn">
-        View All <span class="arrow">></span>
-    </a>
-</div>
-<div class="full-width-line"></div>
-
- 
-    <div class="products-slider">
-        <div class="products-slider__wrapper">
-       
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
-                    </div>
-                    <img src="images/iphone_15.jpg" alt="iPhone 15" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 15</h3>
-                    <div class="price-row">
-                        <span class="current-price">49 990 ₽</span>
-                        <span class="old-price">74 999 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - <span class="save-amount">32 999 ₽</span></div>
-                </div>
-            </div>
-
-     
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
-                    </div>
-                    <img src="images/iphone_15_pro.jpg" alt="iPhone 15 Pro" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 15 Pro</h3>
-                    <div class="price-row">
-                        <span class="current-price">69 990 ₽</span>
-                        <span class="old-price">89 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 20 000 ₽</div>
-                </div>
-            </div>
-
-         
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
-                    </div>
-                    <img src="images/iphone_16.jpg" alt="iPhone 16" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 16</h3>
-                    <div class="price-row">
-                        <span class="current-price">76 990 ₽</span>
-                        <span class="old-price">99 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 23 000 ₽</div>
-                </div>
-            </div>
-
-       
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
-                    </div>
-                    <img src="images/iphone_16_pro.jpg" alt="iPhone 16 Pro" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 16 Pro</h3>
-                    <div class="price-row">
-                        <span class="current-price">99 990 ₽</span>
-                        <span class="old-price">129 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 30 000 ₽</div>
-                </div>
-            </div>
-
-       
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
-                    </div>
-                    <img src="images/iphone_17.jpg" alt="iPhone 17" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 17</h3>
-                    <div class="price-row">
-                        <span class="current-price">79 990 ₽</span>
-                        <span class="old-price">109 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 30 000 ₽</div>
-                </div>
-            </div>
+        <div class="full-width-line"></div>
 
         
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
+            <div class="products-slider">
+                <div class="products-slider__wrapper">
+            
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_15.png" alt="iPhone 15" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 15</h3>
+                            <div class="price-row">
+                                <span class="current-price">49 990 ₽</span>
+                                <span class="old-price">74 999 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - <span class="save-amount">32 999 ₽</span></div>
+                        </div>
                     </div>
-                    <img src="images/iphone_17_pro.jpg" alt="iPhone 17 Pro" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 17 Pro</h3>
-                    <div class="price-row">
-                        <span class="current-price">129 990 ₽</span>
-                        <span class="old-price">169 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 40 000 ₽</div>
-                </div>
-            </div>
 
-           
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
+            
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_15_pro.png" alt="iPhone 15 Pro" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 15 Pro</h3>
+                            <div class="price-row">
+                                <span class="current-price">69 990 ₽</span>
+                                <span class="old-price">89 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 20 000 ₽</div>
+                        </div>
                     </div>
-                    <img src="images/iphone_17_pro_max_1TB.jpg" alt="iPhone 17 Pro Max" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 17 Pro Max</h3>
-                    <div class="price-row">
-                        <span class="current-price">159 990 ₽</span>
-                        <span class="old-price">209 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 50 000 ₽</div>
-                </div>
-            </div>
 
-         
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
+                
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_16.jpg" alt="iPhone 16" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 16</h3>
+                            <div class="price-row">
+                                <span class="current-price">76 990 ₽</span>
+                                <span class="old-price">99 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 23 000 ₽</div>
+                        </div>
                     </div>
-                    <img src="images/iphone_17_pro_max_1TB.jpg" alt="iPhone 17 Pro Max" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 17 Pro Max</h3>
-                    <div class="price-row">
-                        <span class="current-price">189 990 ₽</span>
-                        <span class="old-price">249 990 ₽</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 60 000 ₽</div>
-                </div>
-            </div>
 
-          
-            <div class="product-card">
-                <div class="card-media">
-                    <div class="discount-badge">
-                        <span class="percent">56%</span>
-                        <span class="off-text">OFF</span>
+            
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_16_pro.png" alt="iPhone 16 Pro" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 16 Pro</h3>
+                            <div class="price-row">
+                                <span class="current-price">99 990 ₽</span>
+                                <span class="old-price">129 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 30 000 ₽</div>
+                        </div>
                     </div>
-                    <img src="images/iphone_17_pro_max_2TB.jpg" alt="iPhone 17 Pro Max" class="product-image">
-                </div>
-                <div class="card-info">
-                    <h3 class="product-title">iPhone 17 Pro Max</h3>
-                    <div class="price-row">
-                        <span class="current-price">229 990 ₽</span>
-                        <span class="old-price">299 990 ₽</span>
+
+            
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_17.png" alt="iPhone 17" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 17</h3>
+                            <div class="price-row">
+                                <span class="current-price">79 990 ₽</span>
+                                <span class="old-price">109 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 30 000 ₽</div>
+                        </div>
                     </div>
-                    <div class="divider"></div>
-                    <div class="savings">Save - 70 000 ₽</div>
+
+                
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_17_pro.png" alt="iPhone 17 Pro" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 17 Pro</h3>
+                            <div class="price-row">
+                                <span class="current-price">129 990 ₽</span>
+                                <span class="old-price">169 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 40 000 ₽</div>
+                        </div>
+                    </div>
+
+                
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_17_pro_max_1TB.png" alt="iPhone 17 Pro Max" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 17 Pro Max</h3>
+                            <div class="price-row">
+                                <span class="current-price">159 990 ₽</span>
+                                <span class="old-price">209 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 50 000 ₽</div>
+                        </div>
+                    </div>
+
+                
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_17_pro_max_1TB.png" alt="iPhone 17 Pro Max" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 17 Pro Max</h3>
+                            <div class="price-row">
+                                <span class="current-price">189 990 ₽</span>
+                                <span class="old-price">249 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 60 000 ₽</div>
+                        </div>
+                    </div>
+
+                
+                    <div class="product-card">
+                        <div class="card-media">
+                            <div class="discount-badge">
+                                <span class="percent">56%</span>
+                                <span class="off-text">OFF</span>
+                            </div>
+                            <img src="images/iphone_17_pro_max_2TB.png" alt="iPhone 17 Pro Max" class="product-image">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="product-title">iPhone 17 Pro Max</h3>
+                            <div class="price-row">
+                                <span class="current-price">229 990 ₽</span>
+                                <span class="old-price">299 990 ₽</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="savings">Save - 70 000 ₽</div>
+                        </div>
+                    </div>
                 </div>
+                <button class="slider-btn product_clider_prev-btn">❮</button>
+                <button class="slider-btn product_clider_next-btn">❯</button>
             </div>
-        </div>
-        <button class="slider-btn product_clider_prev-btn">❮</button>
-        <button class="slider-btn product_clider_next-btn">❯</button>
-    </div>
-</section>
+        </section>
     
-    <script src="js/Product_card.js"></script>
-<!-- 4. Категории -->
-<section class="categories-wrapper">
-    <div class="categories-header">
-        <div class="header-title-wrapper">
-            <h2>
-                Shop From 
-                <span class="highlight">Top Categories</span>
-            </h2>
-            <div class="title-underline"></div>
-        </div>
-        <a href="#" class="view-all-btn">
-            View All <span class="arrow">></span>
-        </a>
-    </div>
-    <div class="full-width-line"></div>
+        <script src="js/Product_card.js"></script>
+        <!-- 4. Категории -->
+        <section class="categories-wrapper">
+            <div class="categories-header">
+                <div class="header-title-wrapper">
+                    <h2>
+                        Shop From 
+                        <span class="highlight">Top Categories</span>
+                    </h2>
+                    <div class="title-underline"></div>
+                </div>
+                <a href="#" class="view-all-btn">
+                    View All <span class="arrow">></span>
+                </a>
+            </div>
+            <div class="full-width-line"></div>
 
-  
-    <div class="categories-grid">
-      
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/mobile.png" alt="Mobile" class="category-image">
-            </div>
-            <p class="category-name">Mobile</p>
-        </div>
-    
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/cosmetics.png" alt="Cosmetics" class="category-image">
-            </div>
-            <p class="category-name">Cosmetics</p>
-        </div>
         
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/electronics.png" alt="Electronics" class="category-image">
+            <div class="categories-grid">
+            
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/mobile.png" alt="Mobile" class="category-image">
+                    </div>
+                    <p class="category-name">Mobile</p>
+                </div>
+            
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/cosmetics.png" alt="Cosmetics" class="category-image">
+                    </div>
+                    <p class="category-name">Cosmetics</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/electronics.png" alt="Electronics" class="category-image">
+                    </div>
+                    <p class="category-name">Electronics</p>
+                </div>
+            
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/furniture.png" alt="Furniture" class="category-image">
+                    </div>
+                    <p class="category-name">Furniture</p>
+                </div>
+            
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/watches.png" alt="Watches" class="category-image">
+                    </div>
+                    <p class="category-name">Watches</p>
+                </div>
+            
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/decor.png" alt="Decor" class="category-image">
+                    </div>
+                    <p class="category-name">Decor</p>
+                </div>
+            
+                <div class="category-card">
+                    <div class="category-circle">
+                        <img src="images/accessories.png" alt="Accessories" class="category-image">
+                    </div>
+                    <p class="category-name">Accessories</p>
+                </div>
             </div>
-            <p class="category-name">Electronics</p>
-        </div>
+        </section>    
+
+        <section class="brands-wrapper">
+            <div class="brands-header">
+                <div class="header-title-wrapper">
+                    <h2>
+                        Top 
+                        <span class="highlight">Electronics Brands</span>
+                    </h2>
+                </div>
+                <a href="#" class="view-all-btn">
+                    View All <span class="arrow">></span>
+                </a>
+            </div>
+            <div class="full-width-line"></div>
+
+                <div class="brands-grid">
+                    <!-- Баннер 1: IPHONE -->
+                    <div class="brand-card" data-brand="iphone">
+                        <div class="brand-card-inner">
+                            <div class="brand-info">
+                                <div class="brand-tag">IPHONE</div>
+                                <img src="images/IPHONE_ICONA.png" alt="iPhone" class="brand-logo">
+                                <p class="brand-offer">UP to 80% OFF</p>
+                            </div>
+                            <div class="brand-product">
+                                <img src="images/IPHONE_BREND.png" alt="iPhone product" class="brand-product-img">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Баннер 2: REALME -->
+                    <div class="brand-card" data-brand="realme">
+                        <div class="brand-card-inner">
+                            <div class="brand-info">
+                                <div class="brand-tag">REALME</div>
+                                <img src="images/REALME_ICONA.png" alt="Realme" class="brand-logo">
+                                <p class="brand-offer">UP to 80% OFF</p>
+                            </div>
+                            <div class="brand-product">
+                                <img src="images/REALME_BREND.png" alt="Realme product" class="brand-product-img">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Баннер 3: XIAOMI -->
+                    <div class="brand-card" data-brand="xiaomi">
+                        <div class="brand-card-inner">
+                            <div class="brand-info">
+                                <div class="brand-tag">XIAOMI</div>
+                                <img src="images/XIAOMI_ICONA.png" alt="Xiaomi" class="brand-logo">
+                                <p class="brand-offer">UP to 80% OFF</p>
+                            </div>
+                            <div class="brand-product">
+                                <img src="images/XIAOMI_BREND.png" alt="Xiaomi product" class="brand-product-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- 6. Daily Essentials -->
+        <section class="essentials-wrapper">
+            <div class="essentials-header">
+                <div class="header-title-wrapper">
+                    <h2>
+                        Daily 
+                        <span class="highlight">Essentials</span>
+                    </h2>
+                </div>
+                <a href="#" class="view-all-btn">
+                    View All <span class="arrow">></span>
+                </a>
+            </div>
+            <div class="full-width-line"></div>
+
+            <div class="essentials-grid">
+                <!-- Карточка 1 -->
+                <div class="essentials-card">
+                    <div class="essentials-square">
+                        <img src="images/Daily_Essentials.png" alt="Daily Essentials" class="essentials-img">
+                    </div>
+                    <p class="essentials-title">Daily Essentials</p>
+                    <p class="essentials-offer">UP to 50% OFF</p>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="essentials-card">
+                    <div class="essentials-square">
+                        <img src="images/Vegitables.png" alt="Vegitables" class="essentials-img">
+                    </div>
+                    <p class="essentials-title">Vegitables</p>
+                    <p class="essentials-offer">UP to 50% OFF</p>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="essentials-card">
+                    <div class="essentials-square">
+                        <img src="images/Fruits.png" alt="Fruits" class="essentials-img">
+                    </div>
+                    <p class="essentials-title">Fruits</p>
+                    <p class="essentials-offer">UP to 50% OFF</p>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="essentials-card">
+                    <div class="essentials-square">
+                        <img src="images/Strowberry.png" alt="Strowberry" class="essentials-img">
+                    </div>
+                    <p class="essentials-title">Strowberry</p>
+                    <p class="essentials-offer">UP to 50% OFF</p>
+                </div>
+                <!-- Карточка 5 -->
+                <div class="essentials-card">
+                    <div class="essentials-square">
+                        <img src="images/Mango.png" alt="Mango" class="essentials-img">
+                    </div>
+                    <p class="essentials-title">Mango</p>
+                    <p class="essentials-offer">UP to 50% OFF</p>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="essentials-card">
+                    <div class="essentials-square">
+                        <img src="images/Cherry.png" alt="Cherry" class="essentials-img">
+                    </div>
+                    <p class="essentials-title">Cherry</p>
+                    <p class="essentials-offer">UP to 50% OFF</p>
+                </div>
+            </div>
+        </section>
+    </main>
     
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/furniture.png" alt="Furniture" class="category-image">
-            </div>
-            <p class="category-name">Furniture</p>
-        </div>
-     
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/watches.png" alt="Watches" class="category-image">
-            </div>
-            <p class="category-name">Watches</p>
-        </div>
-      
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/decor.png" alt="Decor" class="category-image">
-            </div>
-            <p class="category-name">Decor</p>
-        </div>
-       
-        <div class="category-card">
-            <div class="category-circle">
-                <img src="images/accessories.png" alt="Accessories" class="category-image">
-            </div>
-            <p class="category-name">Accessories</p>
-        </div>
-    </div>
-    </section>    
-
-<section class="brands-wrapper">
-    <div class="brands-header">
-        <div class="header-title-wrapper">
-            <h2>
-                Top 
-                <span class="highlight">Electronics Brands</span>
-            </h2>
-        </div>
-        <a href="#" class="view-all-btn">
-            View All <span class="arrow">></span>
-        </a>
-    </div>
-    <div class="full-width-line"></div>
-
-        <div class="brands-grid">
-            <!-- Баннер 1: IPHONE -->
-            <div class="brand-card" data-brand="iphone">
-                <div class="brand-card-inner">
-                    <div class="brand-info">
-                        <div class="brand-tag">IPHONE</div>
-                        <img src="images/IPHONE_ICONA.png" alt="iPhone" class="brand-logo">
-                        <p class="brand-offer">UP to 80% OFF</p>
-                    </div>
-                    <div class="brand-product">
-                        <img src="images/IPHONE_BREND.png" alt="iPhone product" class="brand-product-img">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Баннер 2: REALME -->
-            <div class="brand-card" data-brand="realme">
-                <div class="brand-card-inner">
-                    <div class="brand-info">
-                        <div class="brand-tag">REALME</div>
-                        <img src="images/REALME_ICONA.png" alt="Realme" class="brand-logo">
-                        <p class="brand-offer">UP to 80% OFF</p>
-                    </div>
-                    <div class="brand-product">
-                        <img src="images/REALME_BREND.png" alt="Realme product" class="brand-product-img">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Баннер 3: XIAOMI -->
-            <div class="brand-card" data-brand="xiaomi">
-                <div class="brand-card-inner">
-                    <div class="brand-info">
-                        <div class="brand-tag">XIAOMI</div>
-                        <img src="images/XIAOMI_ICONA.png" alt="Xiaomi" class="brand-logo">
-                        <p class="brand-offer">UP to 80% OFF</p>
-                    </div>
-                    <div class="brand-product">
-                        <img src="images/XIAOMI_BREND.png" alt="Xiaomi product" class="brand-product-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- 6. Daily Essentials -->
-<section class="essentials-wrapper">
-    <div class="essentials-header">
-        <div class="header-title-wrapper">
-            <h2>
-                Daily 
-                <span class="highlight">Essentials</span>
-            </h2>
-        </div>
-        <a href="#" class="view-all-btn">
-            View All <span class="arrow">></span>
-        </a>
-    </div>
-    <div class="full-width-line"></div>
-
-    <div class="essentials-grid">
-        <!-- Карточка 1 -->
-        <div class="essentials-card">
-            <div class="essentials-square">
-                <img src="images/Daily_Essentials.png" alt="Daily Essentials" class="essentials-img">
-            </div>
-            <p class="essentials-title">Daily Essentials</p>
-            <p class="essentials-offer">UP to 50% OFF</p>
-        </div>
-        <!-- Карточка 2 -->
-        <div class="essentials-card">
-            <div class="essentials-square">
-                <img src="images/Vegitables.png" alt="Vegitables" class="essentials-img">
-            </div>
-            <p class="essentials-title">Vegitables</p>
-            <p class="essentials-offer">UP to 50% OFF</p>
-        </div>
-        <!-- Карточка 3 -->
-        <div class="essentials-card">
-            <div class="essentials-square">
-                <img src="images/Fruits.png" alt="Fruits" class="essentials-img">
-            </div>
-            <p class="essentials-title">Fruits</p>
-            <p class="essentials-offer">UP to 50% OFF</p>
-        </div>
-        <!-- Карточка 4 -->
-        <div class="essentials-card">
-            <div class="essentials-square">
-                <img src="images/Strowberry.png" alt="Strowberry" class="essentials-img">
-            </div>
-            <p class="essentials-title">Strowberry</p>
-            <p class="essentials-offer">UP to 50% OFF</p>
-        </div>
-        <!-- Карточка 5 -->
-        <div class="essentials-card">
-            <div class="essentials-square">
-                <img src="images/Mango.png" alt="Mango" class="essentials-img">
-            </div>
-            <p class="essentials-title">Mango</p>
-            <p class="essentials-offer">UP to 50% OFF</p>
-        </div>
-        <!-- Карточка 6 -->
-        <div class="essentials-card">
-            <div class="essentials-square">
-                <img src="images/Cherry.png" alt="Cherry" class="essentials-img">
-            </div>
-            <p class="essentials-title">Cherry</p>
-            <p class="essentials-offer">UP to 50% OFF</p>
-        </div>
-    </div>
-</section>
     <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>MegaMart</h3>
-      <p>Contact Us</p>
-      <p><img src="images/ikona_WhatsApp.png" alt="WhatsApp"> +7 (123) 456-78-90</p>
-      <p><img src="images/ikona_tel.png" alt="Телефон"> +7 (123) 456-78-90</p>
-      <p>Download App</p>
-      <p>
-        <a href="#"><img src="images/ikona_AppStore.png" alt="App Store"></a>
-        <a href="#"><img src="images/ikona_GooglePlay.png" alt="Google Play"></a>
-      </p>
-    </div>
-    <div class="footer-column">
-        <div class="title-wrapper"> 
-        <h3>Most Popular Categories</h3>
-        <hr class="title-underline">
-        </div> 
-      <ul>
-        <li>Staples</li>
-        <li>Beverages</li>
-        <li>Personal Care</li>
-        <li>Home Care</li>
-        <li>Baby Care</li>
-        <li>Vegetables & Fruits</li>
-        <li>Snacks & Foods</li>
-        <li>Dairy & Bakery</li>
-      </ul>
-    </div>
-    <div class="footer-column">
-        <div class="title-wrapper">
-        <h3>Customer Services</h3>
-        <hr class="title-underline">
-        </div>      
-      <ul>
-        <li>About Us</li>
-        <li>Terms & Conditions</li>
-        <li>FAQ</li>
-        <li>Privacy Policy</li>
-        <li>E-waste Policy</li>
-        <li>Cancellation & Return Policy</li>
-      </ul>
-    </div>
-  </div>
+        <div class="footer-container">
+            <div class="footer-column">
+            <img src="images/MegaMart_f.png" alt="MegaMart" class="footer-logo">
+            <p>Contact Us</p>
+            <p class="contact-text">Whats App</p>
+            <p><img src="images/ikona_WhatsApp.png" alt="WhatsApp"> +7 (123) 456-78-90</p>
+            <p class="contact-text">Call Us</p>
+            <p><img src="images/ikona_tel.png" alt="Телефон"> +7 (123) 456-78-90</p>
+            <p>Download App</p>
+            <p>
+                <a href="#"><img src="images/ikona_AppStore.png" alt="App Store"></a>
+                <a href="#"><img src="images/ikona_GooglePlay.png" alt="Google Play"></a>
+            </p>
+            </div>
+            <div class="footer-column">
+                <div class="title-wrapper"> 
+                <h3>Most Popular Categories</h3>
+                <hr class="title-underline">
+                </div> 
+            <ul>
+                <li><a href="#top">Staples</a></li>
+                <li><a href="#top">Beverages</a></li>
+                <li><a href="#top">Personal Care</a></li>
+                <li><a href="#top">Home Care</a></li>
+                <li><a href="#top">Baby Care</a></li>
+                <li><a href="#top">Vegetables & Fruits</a></li>
+                <li><a href="#top">Snacks & Foods</a></li>
+                <li><a href="#top">Dairy & Bakery</a></li>
+            </ul>
+            </div>
+            <div class="footer-column">
+                <div class="title-wrapper">
+                <h3>Customer Services</h3>
+                <hr class="title-underline">
+                </div>      
+            <ul>
+                <li><a href="#top">About Us</a></li>
+                <li><a href="#top">Terms & Conditions</a></li>
+                <li><a href="#top">FAQ</a></li>
+                <li><a href="#top">Privacy Policy</a></li>
+                <li><a href="#top">E-waste Policy</a></li>
+                <li><a href="#top">Cancellation & Return Policy</a></li>
+            </ul>
+            </div>
+        </div>
 
-  <div class="footer-bottom">
-    <hr>
-    <p>@2022 All rights reserved. Reliance Retail Ltd.</p>
-  </div>
-</footer>
+        <div class="footer-bottom">
+            <hr>
+            <p>@2022 All rights reserved. Reliance Retail Ltd.</p>
+        </div>
+    </footer>
 
-<div id="authModal" class="modal">
+    <div id="authModal" class="modal">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <div class="form-container">
+            
            
             <div id="loginForm" class="auth-form active">
-                <h3>Вход</h3>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Пароль" required>
-                <button class="submit-btn">Войти</button>
-                <p>Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></p>
+                <form action="/" method="post">
+                    <h3>Вход в личный кабинет</h3>
+                    <input type="tel" name="phone" placeholder="Номер телефона" required>
+                    <input type="password" name="password" placeholder="Пароль" required>
+                    <button type="submit" class="submit-btn">Войти</button>
+                    <p>Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></p>
+                </form>
             </div>
             
+            
             <div id="registerForm" class="auth-form">
-                <h3>Регистрация</h3>
-                <input type="text" placeholder="Имя" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Пароль" required>
-                <input type="password" id="confirm_password" placeholder="Повторите пароль" required>
-                <button class="submit-btn">Зарегистрироваться</button>
-                <p>Уже есть аккаунт? <a href="#" id="showLogin">Войти</a></p>
+                <form action="/" method="post">
+                    <h3>Регистрация</h3>
+                    <input type="text" name="name" placeholder="Имя" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Пароль" required>
+                    <input type="password" name="confirm_password" placeholder="Повторите пароль" required>
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                    <p>Уже есть аккаунт? <a href="#" id="showLogin">Войти</a></p>
+                </form>
             </div>
+            
         </div>
     </div>
 </div>
-<script src="js/modal.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 

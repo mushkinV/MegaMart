@@ -2,7 +2,7 @@
   background-color: #008ECC; 
   color: white; 
   padding: 30px 0;
-  font-family: Arial, sans-serif;
+  font-family: 'HK Grotesk', sans-serif;  /* основной шрифт */
 }
 
 .footer-container {
@@ -10,74 +10,117 @@
   justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
+  
 }
 
 .footer-column {
   flex: 1;
   margin: 0 20px;
 }
-
-.footer-column h3 {
-  margin-bottom: 15px;
-  font-size: 1.2rem;
+.footer-column:first-child {
+  margin-left: 20px;
+}
+.footer-column:last-child {
+  margin-left: -200px;
+  margin-right: 20px;
 }
 
+/* Заголовки колонок (Most Popular Categories, Customer Services) */
+.footer-column h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 500;      /* обычный вес */
+}
+
+/* "Contact Us" и "Download App" – жирные, размер 20px, отступы */
+.footer-column > p:first-of-type,
+.footer-column > p:nth-of-type(6) {  /* то есть первый абзац после логотипа и шестой (Download App) */
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;       /* отступ сверху */
+  margin-bottom: 12px;    /* отступ снизу */
+}
+/* Но лучше дать им классы, чтобы не зависеть от порядка. Рекомендую добавить классы в HTML */
+/* Если добавите классы .section-title, то стиль будет такой: */
+.section-title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+/* Линия под заголовками (выровнена с логотипом) */
+.title-wrapper {
+  display: inline-block;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+  margin-top: 12px;      /* выравнивание по низу логотипа */
+  margin-bottom: 20px;
+}
+
+/* Списки */
 .footer-column ul {
   list-style: none;
   padding: 0;
 }
-
 .footer-column ul li {
   margin-bottom: 10px;
 }
-
 .footer-column ul li::before {
-  content: "•"; 
-  margin-right: 10px; 
-  color: white; 
+  content: "•";
+  margin-right: 10px;
+  color: white;
+}
+.footer-column ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-column ul li a:hover {
+  text-decoration: underline;
 }
 
+/* Нижняя часть футера */
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
 }
-
 .footer-bottom hr {
   border: none;
   height: 1px;
-  background-color: white;
+  background-color: #05ABF3;
   margin: 20px auto;
-  width: 100%; 
+  width: 100%;
   max-width: 1000px;
 }
-
 .footer-bottom p {
   margin: 10px 0;
 }
+
+/* Иконки в контактах и магазинах */
 .footer p img {
-  width: 20px; 
+  width: 20px;
   height: 20px;
-  margin-right: 10px; 
-  vertical-align: middle; 
+  margin-right: 10px;
+  vertical-align: middle;
 }
 .footer p a img {
-  width: 125px; 
-  height: auto; 
-  margin: 0 10px 0 0; 
+  width: 125px;
+  height: auto;
+  margin: 0 10px 0 0;
 }
-.title-wrapper {
-  position: relative; 
-  display: inline-block; 
+
+/* Тексты "Whats App", "Call Us" — сдвиг вправо */
+.contact-text {
+  margin-left: 30px;
+  margin-top: 5px;
 }
-.title-underline {
-  position: absolute;
-  left: 0;
-  bottom: -6px;
+
+/* Логотип */
+.footer-logo {
   width: 100%;
-  height: 2px;
-  background-color: white;
-  border: none;
-  margin: 0;
-  padding: 0;
-  display: block; 
-}   
+  max-width: 217px;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+}

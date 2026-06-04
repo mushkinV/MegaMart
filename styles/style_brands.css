@@ -22,7 +22,7 @@
 .brands-header h2 {
     margin: 0;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'HK Grotesk', sans-serif;
     color: #666;
     line-height: 1.2;
@@ -75,24 +75,21 @@
 .brands-wrapper .full-width-line {
     width: 100%;
     height: 1px;
-    background-color: #ccc;
+    background-color: #EDEDED;
     margin-top: 6px;
     margin-bottom: 30px;
 }
 
 .brands-grid {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* три равные колонки */
     gap: 20px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 10px;
 }
 
 .brand-card {
-    flex: 0 0 389px;
+     width: 100%;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s;
@@ -136,7 +133,7 @@
 
 .brand-logo {
     max-width: 80px;
-    height: 40px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -217,39 +214,21 @@
 }
 
 @media (max-width: 768px) {
-    .brands-wrapper {
-        padding: 30px 15px;
-    }
-    .brands-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    .brands-header .view-all-btn {
-        margin-left: 0;
-    }
-    .brand-card {
-        flex: 0 0 300px;
-    }
     .brand-card-inner {
-        height: 170px;
-    }
-    .brand-tag {
-        width: 85px;
-        height: 30px;
-        font-size: 12px;
-    }
-    .brand-logo {
-        height: 32px;
-    }
-    .brand-offer {
-        font-size: 12px;
+        height: 190px;
+        padding: 15px;
     }
 }
 
+/* На телефонах – одна колонка */
 @media (max-width: 576px) {
-    .brand-card {
-        flex: 0 0 260px;
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     .brand-card-inner {
         flex-direction: column;
@@ -266,12 +245,9 @@
     }
 }
 
+/* На больших экранах оставляем три колонки, убираем все скроллы */
 @media (min-width: 769px) {
     .brands-grid {
-        scrollbar-width: none;         
-        -ms-overflow-style: none;    
-    }
-    .brands-grid::-webkit-scrollbar {
-        display: none;                
+        overflow: visible; /* убираем прокрутку */
     }
 }

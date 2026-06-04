@@ -1,195 +1,171 @@
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    // DOM-элементы
     const modal = document.getElementById('authModal');
     const authBtn = document.querySelector('.auth-btn');
     const closeBtn = document.querySelector('.close-btn');
-    const showRegisterLink = document.getElementById('showRegister');
-    const showLoginLink = document.getElementById('showLogin');
+    const showRegister = document.getElementById('showRegister');
+    const showLogin = document.getElementById('showLogin');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
 
-    // Очистка ошибок
-    function clearErrors(form) {
-        const errorDivs = form.querySelectorAll('.error-message');
-        errorDivs.forEach(div => div.remove());
-        const inputs = form.querySelectorAll('input');
-        inputs.forEach(input => {
+    // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+    function clearErrors(formElement) {
+        formElement.querySelectorAll('.error-message').forEach(err => err.remove());
+        formElement.querySelectorAll('input').forEach(input => {
             input.classList.remove('input-error');
             input.style.borderColor = '';
         });
     }
 
     function showError(input, message) {
-        let existing = input.parentNode.querySelector('.error-message');
-        if (existing) existing.remove();
+        clearErrors(input.closest('form')); // очищаем старые ошибки только для этой формы
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.textContent = message;
-        errorDiv.style.color = 'red';
+        errorDiv.style.color = '#e74c3c';
         errorDiv.style.fontSize = '1.2rem';
         errorDiv.style.marginTop = '4px';
-        input.style.borderColor = 'red';
         input.classList.add('input-error');
-        input.parentNode.appendChild(errorDiv);
+        input.style.borderColor = '#e74c3c';
+        input.after(errorDiv); // вставляем после поля
     }
 
-    function isValidEmail(email) {
+    // === ВАЛИДАЦИЯ ===
+    function validatePhone(phone) {
+        const phoneRegex = /^[\+]?[0-9]{10,15}$/; // цифры, может начинаться с +, всего от 10 до 15 символов
+        return phoneRegex.test(phone);
+    }
+
+    function validateEmail(email) {
         const re = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
         return re.test(email);
     }
 
-    function isValidName(name) {
-        return /^[A-Za-zА-Яа-яЁё\s\-]{2,}$/.test(name);
+    function validateName(name) {
+        return /^[A-Za-zА-Яа-яЁё\s\-]{2,}$/.test(name.trim());
     }
 
-    // --- Анимированное открытие / закрытие ---
+    // === ОТКРЫТИЕ / ЗАКРЫТИЕ МОДАЛКИ ===
     function openModal() {
-        if (!modal) return;
         modal.style.display = 'flex';
-        // Небольшая задержка для запуска CSS-перехода
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 10);
+        setTimeout(() => modal.classList.add('show'), 10);
     }
 
     function closeModal() {
-        if (!modal) return;
         modal.classList.remove('show');
         setTimeout(() => {
-            if (!modal.classList.contains('show')) {
-                modal.style.display = 'none';
-            }
+            if (!modal.classList.contains('show')) modal.style.display = 'none';
         }, 300);
     }
 
-    // Обработчики открытия
-    if (authBtn) {
-        authBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
-    }
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    authBtn?.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    closeBtn?.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('show')) closeModal(); });
 
-    // Закрытие по клику на фон
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+    // === ПЕРЕКЛЮЧЕНИЕ МЕЖДУ ФОРМАМИ ===
+    showRegister?.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginForm.classList.remove('active');
+        registerForm.classList.add('active');
+        clearErrors(loginForm);
+        clearErrors(registerForm);
+    });
+    showLogin?.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerForm.classList.remove('active');
+        loginForm.classList.add('active');
+        clearErrors(loginForm);
+        clearErrors(registerForm);
     });
 
-    // Закрытие по Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
-            closeModal();
-        }
-    });
-
-    // Переключение форм
-    if (showRegisterLink) {
-        showRegisterLink.addEventListener('click', (e) => {
+    // === ФОРМА ВХОДА (телефон + пароль) ===
+    const loginSubmitBtn = loginForm?.querySelector('.submit-btn');
+    if (loginSubmitBtn) {
+        loginSubmitBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            loginForm.classList.remove('active');
-            registerForm.classList.add('active');
             clearErrors(loginForm);
-            clearErrors(registerForm);
+            
+            const phoneInput = loginForm.querySelector('input[name="phone"]');
+            const passwordInput = loginForm.querySelector('input[name="password"]');
+            const phone = phoneInput?.value.trim() || '';
+            const password = passwordInput?.value || '';
+
+            let isValid = true;
+            if (!phone) {
+                showError(phoneInput, 'Введите номер телефона');
+                isValid = false;
+            } else if (!validatePhone(phone)) {
+                showError(phoneInput, 'Номер должен содержать 10–15 цифр, можно начать с +');
+                isValid = false;
+            }
+            if (!password) {
+                showError(passwordInput, 'Введите пароль');
+                isValid = false;
+            } else if (password.length < 6 || password.length > 20) {
+                showError(passwordInput, 'Пароль от 6 до 20 символов');
+                isValid = false;
+            }
+
+            if (isValid) {
+                console.log('Вход:', { phone, password });
+                alert('Форма входа отправлена (демо)');
+                closeModal(); // опционально закрыть окно
+            }
         });
     }
-    if (showLoginLink) {
-        showLoginLink.addEventListener('click', (e) => {
+
+    // === ФОРМА РЕГИСТРАЦИИ (имя, email, пароль, подтверждение) ===
+    const registerSubmitBtn = registerForm?.querySelector('.submit-btn');
+    if (registerSubmitBtn) {
+        registerSubmitBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            registerForm.classList.remove('active');
-            loginForm.classList.add('active');
-            clearErrors(loginForm);
             clearErrors(registerForm);
+
+            const nameInput = registerForm.querySelector('input[name="name"]');
+            const emailInput = registerForm.querySelector('input[name="email"]');
+            const passInput = registerForm.querySelector('input[name="password"]');
+            const confirmInput = registerForm.querySelector('input[name="confirm_password"]');
+            const name = nameInput?.value.trim() || '';
+            const email = emailInput?.value.trim() || '';
+            const password = passInput?.value || '';
+            const confirm = confirmInput?.value || '';
+
+            let isValid = true;
+            if (!name) {
+                showError(nameInput, 'Введите имя');
+                isValid = false;
+            } else if (!validateName(name)) {
+                showError(nameInput, 'Имя должно содержать только буквы (от 2 символов)');
+                isValid = false;
+            }
+            if (!email) {
+                showError(emailInput, 'Введите email');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError(emailInput, 'Некорректный email (пример: name@domain.com)');
+                isValid = false;
+            }
+            if (!password) {
+                showError(passInput, 'Введите пароль');
+                isValid = false;
+            } else if (password.length < 6 || password.length > 20) {
+                showError(passInput, 'Пароль от 6 до 20 символов');
+                isValid = false;
+            }
+            if (!confirm) {
+                showError(confirmInput, 'Подтвердите пароль');
+                isValid = false;
+            } else if (password !== confirm) {
+                showError(confirmInput, 'Пароли не совпадают');
+                isValid = false;
+            }
+
+            if (isValid) {
+                console.log('Регистрация:', { name, email, password });
+                alert('Форма регистрации отправлена (демо)');
+                closeModal();
+            }
         });
-    }
-
-    // Форма входа
-    if (loginForm) {
-        const loginSubmit = loginForm.querySelector('.submit-btn');
-        if (loginSubmit) {
-            loginSubmit.addEventListener('click', (e) => {
-                e.preventDefault();
-                clearErrors(loginForm);
-                const emailInput = loginForm.querySelector('input[type="email"]');
-                const passwordInput = loginForm.querySelector('input[type="password"]');
-                const email = emailInput ? emailInput.value.trim() : '';
-                const password = passwordInput ? passwordInput.value : '';
-                let valid = true;
-
-                if (email === '') {
-                    showError(emailInput, 'Введите email');
-                    valid = false;
-                } else if (!isValidEmail(email)) {
-                    showError(emailInput, 'Введите корректный email (name@domain.com)');
-                    valid = false;
-                }
-                if (password === '') {
-                    showError(passwordInput, 'Введите пароль');
-                    valid = false;
-                } else if (password.length < 6 || password.length > 20) {
-                    showError(passwordInput, 'Пароль должен быть от 6 до 20 символов');
-                    valid = false;
-                }
-                if (valid) {
-                    console.log('Вход:', { email, password });
-                    alert('Форма входа отправлена (демо)');
-                }
-            });
-        }
-    }
-
-    // Форма регистрации
-    if (registerForm) {
-        const registerSubmit = registerForm.querySelector('.submit-btn');
-        if (registerSubmit) {
-            registerSubmit.addEventListener('click', (e) => {
-                e.preventDefault();
-                clearErrors(registerForm);
-                const nameInput = registerForm.querySelector('input[type="text"]');
-                const emailInput = registerForm.querySelector('input[type="email"]');
-                const passwordInput = registerForm.querySelector('input[type="password"]');
-                const confirmInput = registerForm.querySelector('#confirm_password');
-                const name = nameInput ? nameInput.value.trim() : '';
-                const email = emailInput ? emailInput.value.trim() : '';
-                const password = passwordInput ? passwordInput.value : '';
-                const confirm = confirmInput ? confirmInput.value : '';
-                let valid = true;
-
-                if (name === '') {
-                    showError(nameInput, 'Введите имя');
-                    valid = false;
-                } else if (!isValidName(name)) {
-                    showError(nameInput, 'Имя должно содержать только буквы (от 2 символов)');
-                    valid = false;
-                }
-                if (email === '') {
-                    showError(emailInput, 'Введите email');
-                    valid = false;
-                } else if (!isValidEmail(email)) {
-                    showError(emailInput, 'Введите корректный email');
-                    valid = false;
-                }
-                if (password === '') {
-                    showError(passwordInput, 'Введите пароль');
-                    valid = false;
-                } else if (password.length < 6 || password.length > 20) {
-                    showError(passwordInput, 'Пароль должен быть от 6 до 20 символов');
-                    valid = false;
-                }
-                if (confirmInput) {
-                    if (confirm === '') {
-                        showError(confirmInput, 'Подтвердите пароль');
-                        valid = false;
-                    } else if (password !== confirm) {
-                        showError(confirmInput, 'Пароли не совпадают');
-                        valid = false;
-                    }
-                }
-                if (valid) {
-                    console.log('Регистрация:', { name, email, password });
-                    alert('Форма регистрации отправлена (демо)');
-                }
-            });
-        }
     }
 });
