@@ -1,126 +1,217 @@
 .footer {
-  background-color: #008ECC; 
-  color: white; 
-  padding: 30px 0;
-  font-family: 'HK Grotesk', sans-serif;  /* основной шрифт */
+    background-color: #008ECC;
+    background-image: url('../images/Group201.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 200px;    /* ширина 200px, высота автоматически */
+    color: white;
+    padding: 30px 0;
+    font-family: 'HK Grotesk', sans-serif;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
-  
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-column {
-  flex: 1;
-  margin: 0 20px;
+    flex: 1;
+    margin: 0 20px;
 }
 .footer-column:first-child {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 .footer-column:last-child {
-  margin-left: -200px;
-  margin-right: 20px;
+    margin-left:  30px;
+    margin-right: 20px;
 }
 
-/* Заголовки колонок (Most Popular Categories, Customer Services) */
 .footer-column h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-weight: 500;      /* обычный вес */
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 500;
 }
 
-/* "Contact Us" и "Download App" – жирные, размер 20px, отступы */
 .footer-column > p:first-of-type,
-.footer-column > p:nth-of-type(6) {  /* то есть первый абзац после логотипа и шестой (Download App) */
-  font-weight: 600;
-  font-size: 20px;
-  margin-top: 20px;       /* отступ сверху */
-  margin-bottom: 12px;    /* отступ снизу */
+.footer-column > p:nth-of-type(6) {
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 12px;
 }
-/* Но лучше дать им классы, чтобы не зависеть от порядка. Рекомендую добавить классы в HTML */
-/* Если добавите классы .section-title, то стиль будет такой: */
+
 .section-title {
-  font-weight: 600;
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 12px;
 }
 
-/* Линия под заголовками (выровнена с логотипом) */
 .title-wrapper {
-  display: inline-block;
-  border-bottom: 2px solid white;
-  padding-bottom: 5px;
-  margin-top: 12px;      /* выравнивание по низу логотипа */
-  margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    margin-top: 12px;
+    margin-bottom: 20px;
 }
 
-/* Списки */
 .footer-column ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 .footer-column ul li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .footer-column ul li::before {
-  content: "•";
-  margin-right: 10px;
-  color: white;
+    content: "•";
+    margin-right: 10px;
+    color: white;
 }
 .footer-column ul li a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+    font-size: 16px;
 }
 .footer-column ul li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Нижняя часть футера */
 .footer-bottom {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 .footer-bottom hr {
-  border: none;
-  height: 1px;
-  background-color: #05ABF3;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 1000px;
+    border: none;
+    height: 1px;
+    background-color: #05ABF3;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1000px;
 }
 .footer-bottom p {
-  margin: 10px 0;
+    margin: 10px 0;
+    font-size: 20px;      /* высота текста 20 пикселей */
+    line-height: 1.2;
 }
 
-/* Иконки в контактах и магазинах */
 .footer p img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 .footer p a img {
-  width: 125px;
-  height: auto;
-  margin: 0 10px 0 0;
+    width: 125px;
+    height: auto;
+    margin: 0 10px 0 0;
 }
 
-/* Тексты "Whats App", "Call Us" — сдвиг вправо */
 .contact-text {
-  margin-left: 30px;
-  margin-top: 5px;
+    margin-left: 30px;
+    margin-top: 5px;
 }
 
-/* Логотип */
 .footer-logo {
-  width: 100%;
-  max-width: 217px;
-  height: auto;
-  display: block;
-  margin-bottom: 15px;
+    width: 100%;
+    max-width: 217px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .footer-column {
+        flex: 1 1 45%;
+        margin: 0;
+    }
+    .footer-column:last-child {
+        margin-left: 0;   /* убираем отрицательный отступ */
+        margin-right: 0;
+    }
+    .footer-column:first-child {
+        margin-left: 0;
+    }
+}
+
+/* Телефоны (до 768px) - колонки вертикально, отступы, выравнивание по центру */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-column {
+        margin: 0;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+    .footer-column:last-child,
+    .footer-column:first-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /* Выравнивание списков по центру */
+    .footer-column ul {
+        display: inline-block;
+        text-align: left;
+    }
+    /* Иконки и текст в контактах - по центру */
+    .footer p img {
+        vertical-align: middle;
+    }
+    .contact-text {
+        margin-left: 0;
+    }
+    /* Логотип по центру */
+    .footer-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Заголовки с линией - по центру */
+    .title-wrapper {
+        display: block;
+        text-align: center;
+        border-bottom: 2px solid white;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Убираем отрицательный отступ у последней колонки */
+    .footer-column:last-child {
+        margin-left: 0;
+    }
+    /* Текст "Contact Us" и "Download App" */
+    .footer-column > p:first-of-type,
+    .footer-column > p:nth-of-type(6) {
+        text-align: center;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) - ещё меньше отступы и шрифты */
+@media (max-width: 480px) {
+    .footer-column {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .footer-column h3 {
+        font-size: 18px;
+    }
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+    .footer-bottom p {
+        font-size: 16px;
+    }
+    .footer p img {
+        width: 18px;
+        height: 18px;
+    }
 }
