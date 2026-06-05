@@ -93,7 +93,7 @@
 }
 .footer-bottom p {
     margin: 10px 0;
-    font-size: 20px;      /* высота текста 20 пикселей */
+    font-size: 20px;    
     line-height: 1.2;
 }
 
@@ -131,7 +131,7 @@
         margin: 0;
     }
     .footer-column:last-child {
-        margin-left: 0;   /* убираем отрицательный отступ */
+        margin-left: 0;   
         margin-right: 0;
     }
     .footer-column:first-child {
@@ -139,7 +139,7 @@
     }
 }
 
-/* Телефоны (до 768px) - колонки вертикально, отступы, выравнивание по центру */
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -158,24 +158,24 @@
         margin-left: 0;
         margin-right: 0;
     }
-    /* Выравнивание списков по центру */
+    
     .footer-column ul {
         display: inline-block;
         text-align: left;
     }
-    /* Иконки и текст в контактах - по центру */
+   
     .footer p img {
         vertical-align: middle;
     }
     .contact-text {
         margin-left: 0;
     }
-    /* Логотип по центру */
+    
     .footer-logo {
         margin-left: auto;
         margin-right: auto;
     }
-    /* Заголовки с линией - по центру */
+    
     .title-wrapper {
         display: block;
         text-align: center;
@@ -184,7 +184,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    /* Убираем отрицательный отступ у последней колонки */
+  
     .footer-column:last-child {
         margin-left: 0;
     }
@@ -195,7 +195,7 @@
     }
 }
 
-/* Очень маленькие экраны (до 480px) - ещё меньше отступы и шрифты */
+
 @media (max-width: 480px) {
     .footer-column {
         max-width: 100%;
@@ -214,4 +214,5 @@
         width: 18px;
         height: 18px;
     }
+    
 }

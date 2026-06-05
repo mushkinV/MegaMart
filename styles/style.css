@@ -188,7 +188,7 @@ html {
 
 .category-menu {
     display: inline-flex;
-    gap: 1.2rem;
+    gap: 10px;
     align-items: center;
     flex-wrap: nowrap;
     padding-right: 0.5rem; 
@@ -331,6 +331,9 @@ html {
     }
     .menu-arrow {
         font-size: 0.8rem;
+    }
+    .list-icon {
+        display: none;
     }
 }
 

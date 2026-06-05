@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
 
-    // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
     function clearErrors(formElement) {
         formElement.querySelectorAll('.error-message').forEach(err => err.remove());
         formElement.querySelectorAll('input').forEach(input => {
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showError(input, message) {
-        clearErrors(input.closest('form')); // очищаем старые ошибки только для этой формы
+        clearErrors(input.closest('form')); 
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.textContent = message;
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === ВАЛИДАЦИЯ ===
     function validatePhone(phone) {
-        const phoneRegex = /^[\+]?[0-9]{10,15}$/; // цифры, может начинаться с +, всего от 10 до 15 символов
+        const phoneRegex = /^[\+]?[0-9]{10,15}$/; 
         return phoneRegex.test(phone);
     }
 
