@@ -82,7 +82,7 @@
 
 .brands-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* три равные колонки */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -140,14 +140,14 @@
 
 
 .brand-offer {
-    width: 162px;            /* фиксированная ширина */
-    height: 30px;            /* фиксированная высота */
-    display: flex;           /* для центрирования содержимого */
+    width: 162px;           
+    height: 30px;            
+    display: flex;           
     align-items: center;
     justify-content: center;
-    margin-top: auto;   /* добавить эту строку – прижмёт вниз */
-    margin-bottom: 0;             /* убираем лишние отступы */
-    font-size: 24px;         /* можно оставить или увеличить, если нужно */
+    margin-top: auto;  
+    margin-bottom: 0;            
+    font-size: 24px;         
     font-weight: 600;
     font-family: 'HK Grotesk', sans-serif;
     box-sizing: border-box; 
@@ -168,6 +168,12 @@
     width: auto;
     height: auto;
     object-fit: contain;
+}
+.brand-card[data-brand="realme"] .brand-logo {
+    max-width: 120px;    
+    height: auto;         
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .brand-card[data-brand="iphone"] {
@@ -236,7 +242,7 @@
     }
 }
 
-/* На телефонах – одна колонка */
+
 @media (max-width: 576px) {
     .brands-grid {
         grid-template-columns: 1fr;
@@ -257,9 +263,8 @@
     }
 }
 
-/* На больших экранах оставляем три колонки, убираем все скроллы */
 @media (min-width: 769px) {
     .brands-grid {
-        overflow: visible; /* убираем прокрутку */
+        overflow: visible;
     }
 }

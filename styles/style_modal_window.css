@@ -1,4 +1,4 @@
-/* Модальное окно (основа) */
+
 .modal {
     display: none;
     position: fixed;
@@ -20,7 +20,7 @@
     opacity: 1;
 }
 
-/* Контент модалки */
+
 .modal-content {
     background-color: #fff;
     padding: 2.5rem;
@@ -37,7 +37,6 @@
     transform: scale(1);
 }
 
-/* Кнопка закрытия */
 .close-btn {
     position: absolute;
     top: 1.2rem;
@@ -53,7 +52,6 @@
     transform: scale(1.1);
 }
 
-/* Контейнер для форм */
 .auth-form {
     display: none;
     flex-direction: column;
@@ -63,7 +61,7 @@
     display: flex;
 }
 
-/* Заголовок формы */
+
 .auth-form h3 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -72,14 +70,14 @@
     font-weight: 600;
 }
 
-/* Поля ввода */
+
 .auth-form input {
     padding: 1rem 1.2rem;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     font-size: 1.5rem;
     font-family: 'HK Grotesk', sans-serif;
-    transition: all 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     background-color: #fafafa;
     width: 100%;
     box-sizing: border-box;
@@ -91,7 +89,6 @@
     box-shadow: 0 0 0 3px rgba(0, 142, 204, 0.1);
 }
 
-/* Кнопка отправки (Войти / Зарегистрироваться) */
 .submit-btn {
     background-color: #008ECC;
     color: white;
@@ -113,7 +110,7 @@
     transform: scale(0.98);
 }
 
-/* Текст-ссылка (регистрация / вход) */
+
 .auth-form p {
     text-align: center;
     font-size: 1.3rem;
@@ -129,7 +126,7 @@
     text-decoration: underline;
 }
 
-/* Сообщение об ошибке */
+
 .error-message {
     color: #e74c3c;
     font-size: 1.2rem;

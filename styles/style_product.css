@@ -80,6 +80,8 @@
     font-size: 1.2rem;
     font-weight: normal;
     transition: transform 0.2s;
+    position: relative;
+    top: 2px; 
 }
 
 .view-all-btn:hover {
@@ -93,18 +95,19 @@
 
 .products-slider {
     position: relative;
-    overflow-x: auto;       
-    overflow-y: hidden;
-    min-height: 350px;
-    padding: 20px 40px;
+    overflow: visible;         
+    max-width: 1200px;       
+    margin: 0 auto;           
+    padding: 20px 0; 
 }
 
 .products-slider__wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 0;
+    display: grid;                         
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;                             
+    transition: none;
 }
-
+.view-all-btn .arrow 
 
 .product-card {
     flex: 0 0 227px;
@@ -181,7 +184,7 @@
     text-transform: uppercase;
 }
 
-/* Нижняя информационная часть */
+
 .card-info {
     padding: 10px 12px 12px;
     flex: 1;
@@ -231,7 +234,6 @@
     margin: 6px 0 6px 0;
 }
 
-/* Зелёная строка экономии */
 .savings {
     font-size: 12px;
     font-weight: normal;
@@ -241,15 +243,15 @@
 }
 
 .savings .save-amount {
-    font-weight: 700; /* полужирная сумма */
+    font-weight: 700; 
 }
 
-/* Кнопка "Добавить в корзину" скрыта */
+
 .add-to-cart-btn {
     display: none;
 }
 
-/* --- Кнопки навигации карусели --- */
+
 .products-slider .slider-btn {
     position: absolute;
     top: 50%;
@@ -267,7 +269,7 @@
     justify-content: center;
     border: none;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     font-family: 'HK Grotesk', sans-serif;
 }
 
@@ -353,6 +355,10 @@
     }
     .menu-arrow {
         font-size: 0.9rem;
+    }
+    .products-slider__wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(227px, 1fr));
+        overflow-x: auto;  
     }
 }
 

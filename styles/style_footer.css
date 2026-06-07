@@ -3,7 +3,7 @@
     background-image: url('../images/Group201.png');
     background-repeat: no-repeat;
     background-position: top right;
-    background-size: 200px;    /* ширина 200px, высота автоматически */
+    background-size: 200px;   
     color: white;
     padding: 30px 0;
     font-family: 'HK Grotesk', sans-serif;
@@ -188,7 +188,7 @@
     .footer-column:last-child {
         margin-left: 0;
     }
-    /* Текст "Contact Us" и "Download App" */
+   
     .footer-column > p:first-of-type,
     .footer-column > p:nth-of-type(6) {
         text-align: center;

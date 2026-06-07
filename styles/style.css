@@ -193,7 +193,7 @@ html {
     flex-wrap: nowrap;
     padding-right: 0.5rem; 
 }
-
+    
 .menu-item {
     display: inline-flex;
     align-items: center;
@@ -206,7 +206,7 @@ html {
     font-weight: 500;
     color: #222222;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
     white-space: nowrap;
 }
 .menu-item.active {
@@ -335,5 +335,8 @@ html {
     .list-icon {
         display: none;
     }
+    .search input {
+        padding-right: 1rem;  
+    }   
 }
 
